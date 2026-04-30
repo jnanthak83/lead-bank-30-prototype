@@ -1,0 +1,16 @@
+.banking-background-layer [data-name^="Desktop -"] > :not([data-name="Personal Banking"]):not([data-name="Business Banking"]) {
+  display: none !important;
+}
+
+.banking-background-layer [data-name^="Desktop -"] {
+  background-color: #eaeaee !important;
+}
+
+.banking-content-layer [data-name="Personal Banking"],
+.banking-content-layer [data-name="Business Banking"] {
+  display: none !important;
+}
+
+.banking-content-layer [data-name^="Desktop -"] {
+  background-color: transparent !important;
+}

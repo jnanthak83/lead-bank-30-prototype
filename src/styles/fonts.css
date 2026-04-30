@@ -1,0 +1,57 @@
+@font-face {
+  font-family: "Lead Sans Variable";
+  src: url("../assets/fonts/Lead_Sans_Variable.woff2") format("woff2");
+  font-weight: 300 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lead_Sans_Variable:Regular";
+  src: url("../assets/fonts/Lead_Sans_Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lead_Sans_Variable:Medium";
+  src: url("../assets/fonts/Lead_Sans_Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lead Sans Variable:Regular";
+  src: url("../assets/fonts/Lead_Sans_Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lead Sans Variable:Medium";
+  src: url("../assets/fonts/Lead_Sans_Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lead Sans Variable:DemiBold";
+  src: url("../assets/fonts/Lead_Sans_Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: "Lead Sans Variable", sans-serif;
+}
+
+.banking-page,
+.banking-page [class*="Lead_Sans_Variable"],
+.banking-page [class*="Lead Sans Variable"] {
+  font-family: "Lead Sans Variable", sans-serif !important;
+}

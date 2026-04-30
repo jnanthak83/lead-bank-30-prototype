@@ -64,7 +64,7 @@ function Frame2() {
   return (
     <div className="-translate-x-1/2 absolute content-stretch flex font-['Lead_Sans_Variable:Medium',sans-serif] font-[493.75] items-center justify-between leading-[0] left-[calc(50%-541px)] not-italic text-[14px] top-[53px] w-[450px] whitespace-nowrap">
       <div className="flex flex-col justify-center relative shrink-0 text-[#606171]" style={{ fontVariationSettings: "'wdth' 100" }}>
-        <p className="leading-[1.2]">BaaS Platform</p>
+        <p className="leading-[1.2]">Partner Platform</p>
       </div>
       <div className="flex flex-col justify-center relative shrink-0 text-[#2b2c39]" style={{ fontVariationSettings: "'wdth' 100" }}>
         <p className="leading-[1.2]">Developers</p>

@@ -356,7 +356,7 @@ function NavItems() {
   return (
     <div className="absolute content-stretch flex font-['Lead_Sans_Variable:Regular',sans-serif] font-normal gap-[49px] items-center leading-[0] left-[116px] not-italic text-[#3c4043] text-[14px] top-[16.5px] whitespace-nowrap" data-name="Nav Items">
       <div className="flex flex-col justify-center relative shrink-0" style={{ fontVariationSettings: "'wdth' 100" }}>
-        <p className="leading-[normal]">BaaS platform</p>
+        <p className="leading-[normal]">Partner Platform</p>
       </div>
       <div className="flex flex-col justify-center relative shrink-0" style={{ fontVariationSettings: "'wdth' 100" }}>
         <p className="leading-[normal]">Developers</p>
@@ -529,7 +529,7 @@ function Frame16() {
   return (
     <div className="h-[28px] relative shrink-0 w-[277px]">
       <div className="-translate-y-1/2 absolute flex flex-col font-['Lead_Sans_Variable:Regular',sans-serif] font-normal justify-center leading-[0] left-0 not-italic text-[#979595] text-[18px] top-[14.5px] whitespace-nowrap" style={{ fontVariationSettings: "'wdth' 100" }}>
-        <p className="leading-[normal]">BaaS Platform</p>
+        <p className="leading-[normal]">Partner Platform</p>
       </div>
     </div>
   );

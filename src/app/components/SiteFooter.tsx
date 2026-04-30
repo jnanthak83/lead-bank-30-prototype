@@ -8,9 +8,9 @@ type Group = { title: string; items: Item[] };
 
 const COLUMNS: Group[] = [
   {
-    title: "BAAS PLATFORM",
+    title: "PARTNER PLATFORM",
     items: [
-      { label: "BaaS overview", target: { page: "baas" } },
+      { label: "Partner Platform overview", target: { page: "baas" } },
       { label: "Partnership", target: { page: "partnership" } },
       { label: "Compliance", target: { page: "compliance" } },
     ],

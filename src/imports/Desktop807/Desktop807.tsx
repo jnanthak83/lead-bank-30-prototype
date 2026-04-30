@@ -20,7 +20,7 @@ function Frame2() {
   return (
     <div className="-translate-x-1/2 absolute content-stretch flex font-['Lead_Sans_Variable:Medium',sans-serif] font-[493.75] items-center justify-between leading-[0] left-[calc(50%-541px)] not-italic text-[#2b2c39] text-[14px] top-[53px] w-[450px] whitespace-nowrap">
       <div className="flex flex-col justify-center relative shrink-0" style={{ fontVariationSettings: "'wdth' 100" }}>
-        <p className="leading-[1.2]">BaaS Platform</p>
+        <p className="leading-[1.2]">Partner Platform</p>
       </div>
       <div className="flex flex-col justify-center relative shrink-0" style={{ fontVariationSettings: "'wdth' 100" }}>
         <p className="leading-[1.2]">Developers</p>
@@ -159,53 +159,15 @@ function Frame6() {
   return (
     <div className="absolute bottom-[200px] content-stretch flex flex-col font-['Lead_Sans_Variable:Regular',sans-serif] font-normal gap-[42px] items-start justify-end left-[calc(8.33%+34px)] not-italic">
       <div className="flex flex-col justify-end leading-[0] relative shrink-0 text-[#2b2c39] text-[72px] tracking-[-1.44px] whitespace-nowrap" style={{ fontVariationSettings: "'wdth' 100" }}>
-        <p className="leading-[1.1]">Header</p>
+        <p className="leading-[1.1]">
+          Reinventing
+          <br />
+          Modern Banking
+        </p>
       </div>
       <p className="leading-[1.3] relative shrink-0 text-[#606171] text-[24px] w-[477px]" style={{ fontVariationSettings: "'wdth' 100" }}>
         From regulatory oversight to modern APIs, our role is to resolve friction behind the scenes so you can focus on creating meaningful experiences for your customers.
       </p>
-    </div>
-  );
-}
-
-function Frame8() {
-  return (
-    <div className="content-stretch flex flex-col font-['Lead_Sans_Variable:Regular',sans-serif] font-normal gap-[24px] items-start not-italic relative shrink-0">
-      <p className="leading-[1.3] relative shrink-0 text-[#2b2c39] text-[32px] whitespace-nowrap" style={{ fontVariationSettings: "'wdth' 100" }}>
-        Finance without Friction
-      </p>
-      <p className="leading-[1.4] relative shrink-0 text-[#606171] text-[14px] w-[328px]" style={{ fontVariationSettings: "'wdth' 100" }}>
-        From regulatory oversight to complex engineering, our role is to solve challenges behind the scenes so you can focus on creating meaningful experiences for your customers.
-      </p>
-    </div>
-  );
-}
-
-function Frame7() {
-  return (
-    <div className="absolute content-stretch flex gap-[8px] h-[16px] items-center left-[40px] top-[184px] w-[96px]">
-      <div className="flex flex-col font-['Lead_Sans_Variable:Medium',sans-serif] font-[493.75] justify-center leading-[0] not-italic relative shrink-0 text-[#2b2c39] text-[14px] whitespace-nowrap" style={{ fontVariationSettings: "'wdth' 100" }}>
-        <p className="leading-[1.2]">See Details</p>
-      </div>
-      <div className="overflow-clip relative shrink-0 size-[16px]" data-name="arrow-right">
-        <div className="absolute inset-[20.83%]" data-name="Icon">
-          <div className="absolute inset-[-5.36%]">
-            <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 10.3333 10.3333">
-              <path d={svgPaths.p1ed54a80} id="Icon" stroke="var(--stroke-0, #606171)" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function Frame17() {
-  return (
-    <div className="absolute backdrop-blur-[40px] bg-[rgba(255,255,255,0.32)] content-stretch flex flex-col gap-[10px] h-[240px] items-start left-[calc(16.67%+30px)] pb-[84px] pl-[40px] pr-[70px] pt-[40px] rounded-[52px] top-[176px] w-[452px]">
-      <div aria-hidden="true" className="absolute border border-solid border-white inset-0 pointer-events-none rounded-[52px]" />
-      <Frame8 />
-      <Frame7 />
     </div>
   );
 }
@@ -223,31 +185,11 @@ function Frame9() {
   );
 }
 
-function Frame10() {
-  return (
-    <div className="absolute content-stretch flex gap-[8px] h-[16px] items-center left-[40px] top-[184px] w-[96px]">
-      <div className="flex flex-col font-['Lead_Sans_Variable:Medium',sans-serif] font-[493.75] justify-center leading-[0] not-italic relative shrink-0 text-[#2b2c39] text-[14px] whitespace-nowrap" style={{ fontVariationSettings: "'wdth' 100" }}>
-        <p className="leading-[1.2]">See Details</p>
-      </div>
-      <div className="overflow-clip relative shrink-0 size-[16px]" data-name="arrow-right">
-        <div className="absolute inset-[20.83%]" data-name="Icon">
-          <div className="absolute inset-[-5.36%]">
-            <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 10.3333 10.3333">
-              <path d={svgPaths.p1ed54a80} id="Icon" stroke="var(--stroke-0, #606171)" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function Frame18() {
   return (
     <div className="absolute backdrop-blur-[40px] bg-[rgba(255,255,255,0.32)] content-stretch flex flex-col gap-[10px] h-[240px] items-start left-[calc(41.67%+12px)] pb-[104px] pl-[40px] pr-[67px] pt-[40px] rounded-[52px] top-[176px] w-[452px]">
       <div aria-hidden="true" className="absolute border border-solid border-white inset-0 pointer-events-none rounded-[52px]" />
       <Frame9 />
-      <Frame10 />
     </div>
   );
 }
@@ -265,31 +207,11 @@ function Frame11() {
   );
 }
 
-function Frame12() {
-  return (
-    <div className="absolute content-stretch flex gap-[8px] inset-[76.67%_69.91%_16.67%_8.85%] items-center">
-      <div className="flex flex-col font-['Lead_Sans_Variable:Medium',sans-serif] font-[493.75] justify-center leading-[0] not-italic relative shrink-0 text-[#2b2c39] text-[14px] whitespace-nowrap" style={{ fontVariationSettings: "'wdth' 100" }}>
-        <p className="leading-[1.2]">See Details</p>
-      </div>
-      <div className="overflow-clip relative shrink-0 size-[16px]" data-name="arrow-right">
-        <div className="absolute inset-[20.83%]" data-name="Icon">
-          <div className="absolute inset-[-5.36%]">
-            <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 10.3333 10.3333">
-              <path d={svgPaths.p1ed54a80} id="Icon" stroke="var(--stroke-0, #606171)" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function Group() {
   return (
     <div className="absolute h-[240px] left-[calc(41.67%+12px)] top-[426px] w-[452px]">
       <div className="absolute backdrop-blur-[40px] bg-[rgba(255,255,255,0.32)] border border-solid border-white inset-0 rounded-[52px]" />
       <Frame11 />
-      <Frame12 />
     </div>
   );
 }
@@ -307,31 +229,11 @@ function Frame13() {
   );
 }
 
-function Frame14() {
-  return (
-    <div className="absolute content-stretch flex gap-[8px] inset-[76.67%_69.91%_16.67%_8.85%] items-center">
-      <div className="flex flex-col font-['Lead_Sans_Variable:Medium',sans-serif] font-[493.75] justify-center leading-[0] not-italic relative shrink-0 text-[#2b2c39] text-[14px] whitespace-nowrap" style={{ fontVariationSettings: "'wdth' 100" }}>
-        <p className="leading-[1.2]">View Capabilities</p>
-      </div>
-      <div className="overflow-clip relative shrink-0 size-[16px]" data-name="arrow-right">
-        <div className="absolute inset-[20.83%]" data-name="Icon">
-          <div className="absolute inset-[-5.36%]">
-            <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 10.3333 10.3333">
-              <path d={svgPaths.p1ed54a80} id="Icon" stroke="var(--stroke-0, #606171)" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function Group2() {
   return (
     <div className="absolute h-[240px] left-[calc(66.67%-6px)] top-[426px] w-[452px]">
       <div className="absolute backdrop-blur-[40px] bg-[rgba(255,255,255,0.32)] border border-solid border-white inset-0 rounded-[52px]" />
       <Frame13 />
-      <Frame14 />
     </div>
   );
 }
@@ -349,31 +251,11 @@ function Frame15() {
   );
 }
 
-function Frame16() {
-  return (
-    <div className="absolute content-stretch flex gap-[8px] inset-[76.67%_69.91%_16.67%_8.85%] items-center">
-      <div className="flex flex-col font-['Lead_Sans_Variable:Medium',sans-serif] font-[493.75] justify-center leading-[0] not-italic relative shrink-0 text-[#2b2c39] text-[14px] whitespace-nowrap" style={{ fontVariationSettings: "'wdth' 100" }}>
-        <p className="leading-[1.2]">See Approach</p>
-      </div>
-      <div className="overflow-clip relative shrink-0 size-[16px]" data-name="arrow-right">
-        <div className="absolute inset-[20.83%]" data-name="Icon">
-          <div className="absolute inset-[-5.36%]">
-            <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 10.3333 10.3333">
-              <path d={svgPaths.p1ed54a80} id="Icon" stroke="var(--stroke-0, #606171)" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function Group1() {
   return (
     <div className="h-[240px] relative shrink-0 w-[452px]">
       <div className="absolute backdrop-blur-[40px] bg-[rgba(255,255,255,0.32)] border border-solid border-white inset-0 rounded-[52px]" />
       <Frame15 />
-      <Frame16 />
     </div>
   );
 }
@@ -424,7 +306,6 @@ export default function Desktop() {
         </div>
       </div>
       <Frame6 />
-      <Frame17 />
       <Frame18 />
       <Group />
       <Group2 />

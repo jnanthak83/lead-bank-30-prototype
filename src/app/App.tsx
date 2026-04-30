@@ -2,10 +2,6 @@ import { useEffect, useState } from "react";
 import Desktop807 from "../imports/Desktop807/Desktop807";
 import { HeroRotating } from "./components/HeroRotating";
 import Desktop778 from "../imports/Desktop778/Desktop778";
-import Desktop782 from "../imports/Desktop782/Desktop782";
-import Desktop783 from "../imports/Desktop783/Desktop783";
-import Desktop784 from "../imports/Desktop784/Desktop784";
-import Desktop779 from "../imports/Desktop779/Desktop779";
 import { SiteFooter } from "./components/SiteFooter";
 import imgHomeA from "../imports/Desktop772/00b7a85efd5530ed04836de8cb6b3380a5f23726.png";
 import imgHomeB from "../imports/Desktop772/2e0d7621d24b5cac2ad309914b257bd34a82cccf.png";
@@ -23,6 +19,8 @@ import { UseCasePage, type UseCaseKey } from "./components/UseCasePage";
 import { LeadershipTeam } from "./components/LeadershipTeam";
 import { Blog } from "./components/Blog";
 import { StubPage } from "./components/StubPage";
+import { PartnerPlatform } from "./components/PartnerPlatform";
+import { EverydayBanking } from "./components/EverydayBanking";
 
 const LEND_ITEMS = [
   { id: "embedded-credit", title: "Embedded credit" },
@@ -44,11 +42,9 @@ const STORE_TOTAL = STORE_ITEMS.length + 2;
 const sections = [
   HeroRotating,
   Desktop807,
+  PartnerPlatform,
   Desktop778,
-  Desktop782,
-  Desktop783,
-  Desktop784,
-  Desktop779,
+  EverydayBanking,
 ];
 
 export type Page =
@@ -98,8 +94,8 @@ const USE_CASE_LABELS: Record<string, string> = {
 };
 
 const STUB_PAGES: Partial<Record<Page, { title: string; eyebrow: string }>> = {
-  partnership: { title: "Partnership", eyebrow: "BaaS Platform" },
-  compliance: { title: "Compliance", eyebrow: "BaaS Platform" },
+  partnership: { title: "Partnership", eyebrow: "Partner Platform" },
+  compliance: { title: "Compliance", eyebrow: "Partner Platform" },
   "api-docs": { title: "API documentation", eyebrow: "Developers" },
   changelog: { title: "Change logs", eyebrow: "Developers" },
   "uc-lending": { title: "Lending", eyebrow: "Use Cases" },
@@ -167,7 +163,16 @@ export default function App() {
         <div className="w-full relative">
           {sections.map((Section, i) => (
             <Reveal key={i}>
-              <Section />
+              {Section === PartnerPlatform ? (
+                <PartnerPlatform
+                  onNavigate={() => {
+                    setPage("baas");
+                    setSection(undefined);
+                  }}
+                />
+              ) : (
+                <Section />
+              )}
             </Reveal>
           ))}
           <SiteFooter
@@ -375,7 +380,7 @@ export default function App() {
             ? USE_CASE_LABELS[page]
             : stubPage
             ? stubPage.title
-            : "BaaS Platform"
+            : "Partner Platform"
         }
         total={
           page === "home"

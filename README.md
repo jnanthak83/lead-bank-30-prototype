@@ -78,7 +78,7 @@ Stub pages use `src/app/components/StubPage.tsx`. They are useful when navigatio
 ## Current Page Areas
 
 - Home
-- BaaS platform overview
+- Partner Platform overview
 - Capabilities: Lend, Issue, Move, Store
 - Banking: Business, Personal
 - Use cases: Lending, Digital banking, Consumer payments, Credit builder, Business finances, Crypto

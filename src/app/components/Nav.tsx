@@ -42,7 +42,7 @@ const USE_CASE_MAP: Record<string, Page> = {
 type MenuKey = "baas" | "devs" | "banking" | "about";
 
 const TOP_LINKS: { key: MenuKey; label: string }[] = [
-  { key: "baas", label: "BaaS Platform" },
+  { key: "baas", label: "Partner Platform" },
   { key: "devs", label: "Developers" },
   { key: "banking", label: "Banking" },
   { key: "about", label: "Company" },
@@ -224,7 +224,7 @@ function BaasPanel({
 }) {
   const handleItemClick = (item: string) => {
     const overviewMap: Record<string, Page> = {
-      "BaaS overview": "baas",
+      "Partner Platform overview": "baas",
       "Partnership": "partnership",
       "Compliance": "compliance",
     };
@@ -265,7 +265,7 @@ function BaasPanel({
       <Column
         dark={dark}
         title="OVERVIEW"
-        items={["BaaS overview", "Partnership", "Compliance"]}
+        items={["Partner Platform overview", "Partnership", "Compliance"]}
         onItemClick={handleItemClick}
       />
       <Column

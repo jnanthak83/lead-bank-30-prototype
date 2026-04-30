@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
-const WORDS = ["A partner", "Infrastructure", "Oversight", "Technologies", "Expertise"];
+const WORDS = ["A partner", "Infrastructure", "Oversight", "Technology", "Expertise"];
 
 export function HeroRotating() {
   const [index, setIndex] = useState(0);
@@ -58,7 +58,7 @@ export function HeroRotating() {
           className="font-['Lead_Sans_Variable:Regular',sans-serif] text-[#606171] text-[32px] w-[693px]"
           style={{ fontVariationSettings: "'wdth' 100", lineHeight: 1.3 }}
         >
-          Programmable financial services designed to help fintechs scale quickly and responsibly.{" "}
+          Programmable financial services designed to help you scale quickly and responsibly
         </p>
       </div>
 

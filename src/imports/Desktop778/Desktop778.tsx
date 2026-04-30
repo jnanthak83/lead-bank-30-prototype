@@ -4,16 +4,17 @@ import imgHome1 from "./2e0d7621d24b5cac2ad309914b257bd34a82cccf.png";
 
 function Frame6() {
   return (
-    <div className="-translate-y-1/2 absolute content-stretch flex flex-col gap-[42px] items-start left-[calc(50%+5px)] top-[calc(50%+0.5px)]">
-      <div className="flex flex-col font-['Lead_Sans_Variable:Regular',sans-serif] font-normal justify-end leading-[0] not-italic relative shrink-0 text-[#2b2c39] text-[72px] tracking-[-1.44px] whitespace-nowrap" style={{ fontVariationSettings: "'wdth' 100" }}>
-        <p className="leading-[1.1]">Backed by Experience</p>
+    <div className="-translate-y-1/2 absolute content-stretch flex flex-col gap-[42px] items-start left-[1040px] top-[calc(50%+0.5px)]">
+      <div className="flex flex-col font-['Lead_Sans_Variable:Regular',sans-serif] font-normal justify-end leading-[0] not-italic relative shrink-0 text-[#2b2c39] text-[72px]" style={{ fontVariationSettings: "'wdth' 100" }}>
+        <p className="leading-[1.05] mb-0">Backed by</p>
+        <p className="leading-[1.05]">Experience</p>
       </div>
-      <p className="font-['Lead_Sans_Variable:Regular',sans-serif] font-normal leading-[1.3] not-italic relative shrink-0 text-[#606171] text-[24px] w-[699px]" style={{ fontVariationSettings: "'wdth' 100" }}>
+      <p className="font-['Lead_Sans_Variable:Regular',sans-serif] font-normal leading-[1.3] not-italic relative shrink-0 text-[#606171] text-[24px] w-[560px]" style={{ fontVariationSettings: "'wdth' 100" }}>
         Our team has been in your shoes. We know where bank partnerships usually break down, so we built the infrastructure we wished existed. Designed for founders by founders, Lead brings together not just banking experience and fintech expertise, but industry-recognized excellence across the board.
       </p>
       <div className="bg-white content-stretch flex gap-[12px] h-[48px] items-center justify-center px-[32px] py-[12px] relative rounded-[24px] shrink-0" data-name="Button">
         <div className="flex flex-col font-['Lead_Sans_Variable:Medium',sans-serif] font-[493.75] justify-center leading-[0] not-italic relative shrink-0 text-[#2b2c39] text-[14px] whitespace-nowrap" style={{ fontVariationSettings: "'wdth' 100" }}>
-          <p className="leading-[1.2]">Learn More</p>
+          <p className="leading-[1.2]">Learn More About Us</p>
         </div>
         <div className="overflow-clip relative shrink-0 size-[16px]" data-name="arrow-right">
           <div className="absolute inset-[20.83%]" data-name="Icon">
@@ -31,42 +32,42 @@ function Frame6() {
 
 function Frame10() {
   return (
-    <div className="content-stretch flex flex-col font-['Lead_Sans_Variable:Medium',sans-serif] font-[493.75] gap-[12px] items-center justify-center leading-[0] relative shrink-0 text-[#606171] text-[0px]">
-      <p className="relative shrink-0 w-[220px]" style={{ fontVariationSettings: "'wdth' 100" }}>
-        <span className="leading-[1.2] text-[#2b2c39] text-[14px]" style={{ fontVariationSettings: "'wdth' 100" }}>
+    <div className="content-stretch flex flex-col font-['Lead_Sans_Variable:Medium',sans-serif] font-[493.75] gap-[8px] items-start justify-center leading-[0] relative shrink-0 text-[#606171] text-[0px]">
+      <p className="relative shrink-0 w-[300px]" style={{ fontVariationSettings: "'wdth' 100" }}>
+        <span className="leading-[1.2] text-[#2b2c39] text-[13px]" style={{ fontVariationSettings: "'wdth' 100" }}>
           2026
         </span>
-        <span className="leading-[1.2] text-[14px]" style={{ fontVariationSettings: "'wdth' 100" }}>{` America’s Best Startup Employers`}</span>
+        <span className="leading-[1.2] text-[13px]" style={{ fontVariationSettings: "'wdth' 100" }}>{` America’s Best Startup Employers`}</span>
       </p>
-      <p className="relative shrink-0 w-[220px]" style={{ fontVariationSettings: "'wdth' 100" }}>
-        <span className="leading-[1.2] text-[#2b2c39] text-[14px]" style={{ fontVariationSettings: "'wdth' 100" }}>
+      <p className="relative shrink-0 w-[300px]" style={{ fontVariationSettings: "'wdth' 100" }}>
+        <span className="leading-[1.2] text-[#2b2c39] text-[13px]" style={{ fontVariationSettings: "'wdth' 100" }}>
           2026
         </span>
-        <span className="leading-[1.2] text-[14px]" style={{ fontVariationSettings: "'wdth' 100" }}>{` Fintech 50`}</span>
+        <span className="leading-[1.2] text-[13px]" style={{ fontVariationSettings: "'wdth' 100" }}>{` Fintech 50`}</span>
       </p>
-      <p className="relative shrink-0 w-[220px]" style={{ fontVariationSettings: "'wdth' 100" }}>
-        <span className="leading-[1.2] text-[#2b2c39] text-[14px]" style={{ fontVariationSettings: "'wdth' 100" }}>
+      <p className="relative shrink-0 w-[300px]" style={{ fontVariationSettings: "'wdth' 100" }}>
+        <span className="leading-[1.2] text-[#2b2c39] text-[13px]" style={{ fontVariationSettings: "'wdth' 100" }}>
           2025
         </span>
-        <span className="leading-[1.2] text-[14px]" style={{ fontVariationSettings: "'wdth' 100" }}>{` Next Billion Dollar Startup`}</span>
+        <span className="leading-[1.2] text-[13px]" style={{ fontVariationSettings: "'wdth' 100" }}>{` Next Billion Dollar Startup`}</span>
       </p>
-      <p className="relative shrink-0 w-[220px]" style={{ fontVariationSettings: "'wdth' 100" }}>
-        <span className="leading-[1.2] text-[#2b2c39] text-[14px]" style={{ fontVariationSettings: "'wdth' 100" }}>
+      <p className="relative shrink-0 w-[300px]" style={{ fontVariationSettings: "'wdth' 100" }}>
+        <span className="leading-[1.2] text-[#2b2c39] text-[13px]" style={{ fontVariationSettings: "'wdth' 100" }}>
           2025
         </span>
-        <span className="leading-[1.2] text-[14px]" style={{ fontVariationSettings: "'wdth' 100" }}>{` Fintech 50`}</span>
+        <span className="leading-[1.2] text-[13px]" style={{ fontVariationSettings: "'wdth' 100" }}>{` Fintech 50`}</span>
       </p>
-      <p className="relative shrink-0 w-[220px]" style={{ fontVariationSettings: "'wdth' 100" }}>
-        <span className="leading-[1.2] text-[#2b2c39] text-[14px]" style={{ fontVariationSettings: "'wdth' 100" }}>
+      <p className="relative shrink-0 w-[300px]" style={{ fontVariationSettings: "'wdth' 100" }}>
+        <span className="leading-[1.2] text-[#2b2c39] text-[13px]" style={{ fontVariationSettings: "'wdth' 100" }}>
           2023
         </span>
-        <span className="leading-[1.2] text-[14px]" style={{ fontVariationSettings: "'wdth' 100" }}>{` Fintech 50`}</span>
+        <span className="leading-[1.2] text-[13px]" style={{ fontVariationSettings: "'wdth' 100" }}>{` Fintech 50`}</span>
       </p>
-      <p className="relative shrink-0 w-[220px]" style={{ fontVariationSettings: "'wdth' 100" }}>
-        <span className="leading-[1.2] text-[#2b2c39] text-[14px]" style={{ fontVariationSettings: "'wdth' 100" }}>
+      <p className="relative shrink-0 w-[300px]" style={{ fontVariationSettings: "'wdth' 100" }}>
+        <span className="leading-[1.2] text-[#2b2c39] text-[13px]" style={{ fontVariationSettings: "'wdth' 100" }}>
           2023
         </span>
-        <span className="leading-[1.2] text-[14px]" style={{ fontVariationSettings: "'wdth' 100" }}>{` Fintech 50`}</span>
+        <span className="leading-[1.2] text-[13px]" style={{ fontVariationSettings: "'wdth' 100" }}>{` Fintech 50`}</span>
       </p>
     </div>
   );
@@ -85,10 +86,10 @@ function Frame12() {
 
 function Frame7() {
   return (
-    <div className="absolute backdrop-blur-[40px] bg-[rgba(255,255,255,0.32)] content-stretch flex flex-col gap-[24px] items-start left-[calc(8.33%+34px)] pb-[40px] pl-[40px] pr-[68px] pt-[100px] rounded-[52px] top-[226px] w-[300px]">
+    <div className="absolute backdrop-blur-[40px] bg-[rgba(255,255,255,0.32)] content-stretch flex flex-col gap-[24px] items-start h-[320px] left-[130px] pb-[32px] pl-[40px] pr-[40px] pt-[76px] rounded-[52px] top-[120px] w-[400px]">
       <div aria-hidden="true" className="absolute border border-solid border-white inset-0 pointer-events-none rounded-[52px]" />
       <Frame12 />
-      <div className="absolute h-[60px] left-[190px] top-[32px] w-[78px]" data-name="Union">
+      <div className="absolute h-[60px] left-[290px] top-[32px] w-[78px]" data-name="Union">
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 78 60">
           <path d={svgPaths.p30f6b700} fill="var(--fill-0, #606171)" id="Union" opacity="0.6" />
         </svg>
@@ -117,10 +118,10 @@ function Frame14() {
 
 function Frame8() {
   return (
-    <div className="absolute backdrop-blur-[40px] bg-[rgba(255,255,255,0.32)] content-stretch flex flex-col gap-[24px] items-start left-[calc(8.33%+34px)] pb-[40px] pl-[40px] pr-[68px] pt-[100px] rounded-[52px] top-[559px] w-[300px]">
+    <div className="absolute backdrop-blur-[40px] bg-[rgba(255,255,255,0.32)] content-stretch flex flex-col gap-[24px] items-start h-[320px] left-[130px] pb-[32px] pl-[40px] pr-[40px] pt-[76px] rounded-[52px] top-[470px] w-[400px]">
       <div aria-hidden="true" className="absolute border border-solid border-white inset-0 pointer-events-none rounded-[52px]" />
       <Frame14 />
-      <div className="absolute h-[60px] left-[190px] top-[32px] w-[78px]" data-name="Union">
+      <div className="absolute h-[60px] left-[290px] top-[32px] w-[78px]" data-name="Union">
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 78 60">
           <path d={svgPaths.p30f6b700} fill="var(--fill-0, #606171)" id="Union" opacity="0.6" />
         </svg>
@@ -131,30 +132,30 @@ function Frame8() {
 
 function Frame11() {
   return (
-    <div className="content-stretch flex flex-col font-['Lead_Sans_Variable:Medium',sans-serif] font-[493.75] gap-[12px] items-center justify-center leading-[0] relative shrink-0 text-[#606171] text-[0px]">
-      <p className="relative shrink-0 w-[220px]" style={{ fontVariationSettings: "'wdth' 100" }}>
-        <span className="leading-[1.2] text-[#2b2c39] text-[14px]" style={{ fontVariationSettings: "'wdth' 100" }}>
+    <div className="content-stretch flex flex-col font-['Lead_Sans_Variable:Medium',sans-serif] font-[493.75] gap-[8px] items-start justify-center leading-[0] relative shrink-0 text-[#606171] text-[0px]">
+      <p className="relative shrink-0 w-[300px]" style={{ fontVariationSettings: "'wdth' 100" }}>
+        <span className="leading-[1.2] text-[#2b2c39] text-[13px]" style={{ fontVariationSettings: "'wdth' 100" }}>
           2025
         </span>
-        <span className="leading-[1.2] text-[14px]" style={{ fontVariationSettings: "'wdth' 100" }}>{` Disruptors 50`}</span>
+        <span className="leading-[1.2] text-[13px]" style={{ fontVariationSettings: "'wdth' 100" }}>{` Disruptors 50`}</span>
       </p>
-      <p className="relative shrink-0 w-[220px]" style={{ fontVariationSettings: "'wdth' 100" }}>
-        <span className="leading-[1.2] text-[#2b2c39] text-[14px]" style={{ fontVariationSettings: "'wdth' 100" }}>
+      <p className="relative shrink-0 w-[300px]" style={{ fontVariationSettings: "'wdth' 100" }}>
+        <span className="leading-[1.2] text-[#2b2c39] text-[13px]" style={{ fontVariationSettings: "'wdth' 100" }}>
           2024
         </span>
-        <span className="leading-[1.2] text-[14px]" style={{ fontVariationSettings: "'wdth' 100" }}>{` Disruptors 50`}</span>
+        <span className="leading-[1.2] text-[13px]" style={{ fontVariationSettings: "'wdth' 100" }}>{` Disruptors 50`}</span>
       </p>
-      <p className="relative shrink-0 w-[220px]" style={{ fontVariationSettings: "'wdth' 100" }}>
-        <span className="leading-[1.2] text-[#2b2c39] text-[14px]" style={{ fontVariationSettings: "'wdth' 100" }}>
+      <p className="relative shrink-0 w-[300px]" style={{ fontVariationSettings: "'wdth' 100" }}>
+        <span className="leading-[1.2] text-[#2b2c39] text-[13px]" style={{ fontVariationSettings: "'wdth' 100" }}>
           2024
         </span>
-        <span className="leading-[1.2] text-[14px]" style={{ fontVariationSettings: "'wdth' 100" }}>{` World's Top 250 Fintech Companies`}</span>
+        <span className="leading-[1.2] text-[13px]" style={{ fontVariationSettings: "'wdth' 100" }}>{` World's Top 250 Fintech Companies`}</span>
       </p>
-      <p className="relative shrink-0 w-[220px]" style={{ fontVariationSettings: "'wdth' 100" }}>
-        <span className="leading-[1.2] text-[#2b2c39] text-[14px]" style={{ fontVariationSettings: "'wdth' 100" }}>
+      <p className="relative shrink-0 w-[300px]" style={{ fontVariationSettings: "'wdth' 100" }}>
+        <span className="leading-[1.2] text-[#2b2c39] text-[13px]" style={{ fontVariationSettings: "'wdth' 100" }}>
           2023
         </span>
-        <span className="leading-[1.2] text-[14px]" style={{ fontVariationSettings: "'wdth' 100" }}>{` World's Top 200 Fintech Companies`}</span>
+        <span className="leading-[1.2] text-[13px]" style={{ fontVariationSettings: "'wdth' 100" }}>{` World's Top 200 Fintech Companies`}</span>
       </p>
     </div>
   );
@@ -173,10 +174,10 @@ function Frame13() {
 
 function Frame9() {
   return (
-    <div className="absolute backdrop-blur-[40px] bg-[rgba(255,255,255,0.32)] content-stretch flex flex-col gap-[24px] items-start left-[calc(25%+24px)] pb-[40px] pl-[40px] pr-[68px] pt-[100px] rounded-[52px] top-[160px] w-[300px]">
+    <div className="absolute backdrop-blur-[40px] bg-[rgba(255,255,255,0.32)] content-stretch flex flex-col gap-[24px] items-start h-[320px] left-[560px] pb-[32px] pl-[40px] pr-[40px] pt-[76px] rounded-[52px] top-[60px] w-[400px]">
       <div aria-hidden="true" className="absolute border border-solid border-white inset-0 pointer-events-none rounded-[52px]" />
       <Frame13 />
-      <div className="absolute h-[60px] left-[190px] top-[32px] w-[78px]" data-name="Union">
+      <div className="absolute h-[60px] left-[290px] top-[32px] w-[78px]" data-name="Union">
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 78 60">
           <path d={svgPaths.p30f6b700} fill="var(--fill-0, #606171)" id="Union" opacity="0.6" />
         </svg>
@@ -211,10 +212,10 @@ function Frame16() {
 
 function Frame15() {
   return (
-    <div className="absolute backdrop-blur-[40px] bg-[rgba(255,255,255,0.32)] content-stretch flex flex-col gap-[24px] items-start left-[calc(25%+24px)] pb-[40px] pl-[40px] pr-[68px] pt-[100px] rounded-[52px] top-[466px] w-[300px]">
+    <div className="absolute backdrop-blur-[40px] bg-[rgba(255,255,255,0.32)] content-stretch flex flex-col gap-[24px] items-start h-[320px] left-[560px] pb-[32px] pl-[40px] pr-[40px] pt-[76px] rounded-[52px] top-[395px] w-[400px]">
       <div aria-hidden="true" className="absolute border border-solid border-white inset-0 pointer-events-none rounded-[52px]" />
       <Frame16 />
-      <div className="absolute h-[60px] left-[190px] top-[32px] w-[78px]" data-name="Union">
+      <div className="absolute h-[60px] left-[290px] top-[32px] w-[78px]" data-name="Union">
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 78 60">
           <path d={svgPaths.p30f6b700} fill="var(--fill-0, #606171)" id="Union" opacity="0.6" />
         </svg>
@@ -225,18 +226,18 @@ function Frame15() {
 
 function Frame20() {
   return (
-    <div className="content-stretch flex flex-col font-['Lead_Sans_Variable:Medium',sans-serif] font-[493.75] gap-[12px] items-center justify-center leading-[0] relative shrink-0 text-[#606171] text-[0px]">
-      <p className="relative shrink-0 w-[220px]" style={{ fontVariationSettings: "'wdth' 100" }}>
-        <span className="leading-[1.2] text-[#2b2c39] text-[14px]" style={{ fontVariationSettings: "'wdth' 100" }}>
+    <div className="content-stretch flex flex-col font-['Lead_Sans_Variable:Medium',sans-serif] font-[493.75] gap-[8px] items-start justify-center leading-[0] relative shrink-0 text-[#606171] text-[0px]">
+      <p className="relative shrink-0 w-[300px]" style={{ fontVariationSettings: "'wdth' 100" }}>
+        <span className="leading-[1.2] text-[#2b2c39] text-[13px]" style={{ fontVariationSettings: "'wdth' 100" }}>
           2024
         </span>
-        <span className="leading-[1.2] text-[14px]" style={{ fontVariationSettings: "'wdth' 100" }}>{` Most Loved Workplaces`}</span>
+        <span className="leading-[1.2] text-[13px]" style={{ fontVariationSettings: "'wdth' 100" }}>{` Most Loved Workplaces`}</span>
       </p>
-      <p className="relative shrink-0 w-[220px]" style={{ fontVariationSettings: "'wdth' 100" }}>
-        <span className="leading-[1.2] text-[#2b2c39] text-[14px]" style={{ fontVariationSettings: "'wdth' 100" }}>
+      <p className="relative shrink-0 w-[300px]" style={{ fontVariationSettings: "'wdth' 100" }}>
+        <span className="leading-[1.2] text-[#2b2c39] text-[13px]" style={{ fontVariationSettings: "'wdth' 100" }}>
           2024
         </span>
-        <span className="leading-[1.2] text-[14px]" style={{ fontVariationSettings: "'wdth' 100" }}>{` Best Regional Banks and Credit Unions`}</span>
+        <span className="leading-[1.2] text-[13px]" style={{ fontVariationSettings: "'wdth' 100" }}>{` Best Regional Banks and Credit Unions`}</span>
       </p>
     </div>
   );
@@ -255,10 +256,10 @@ function Frame19() {
 
 function Frame18() {
   return (
-    <div className="absolute backdrop-blur-[40px] bg-[rgba(255,255,255,0.32)] content-stretch flex flex-col gap-[24px] items-start left-[calc(25%+24px)] pb-[40px] pl-[40px] pr-[68px] pt-[100px] rounded-[52px] top-[710px] w-[300px]">
+    <div className="absolute backdrop-blur-[40px] bg-[rgba(255,255,255,0.32)] content-stretch flex flex-col gap-[24px] items-start h-[320px] left-[560px] pb-[32px] pl-[40px] pr-[40px] pt-[76px] rounded-[52px] top-[730px] w-[400px]">
       <div aria-hidden="true" className="absolute border border-solid border-white inset-0 pointer-events-none rounded-[52px]" />
       <Frame19 />
-      <div className="absolute h-[60px] left-[190px] top-[32px] w-[78px]" data-name="Union">
+      <div className="absolute h-[60px] left-[290px] top-[32px] w-[78px]" data-name="Union">
         <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 78 60">
           <path d={svgPaths.p30f6b700} fill="var(--fill-0, #606171)" id="Union" opacity="0.6" />
         </svg>
@@ -271,7 +272,7 @@ function Frame2() {
   return (
     <div className="-translate-x-1/2 absolute content-stretch flex font-['Lead_Sans_Variable:Medium',sans-serif] font-[493.75] items-center justify-between leading-[0] left-[calc(50%-541px)] not-italic text-[#2b2c39] text-[14px] top-[53px] w-[450px] whitespace-nowrap">
       <div className="flex flex-col justify-center relative shrink-0" style={{ fontVariationSettings: "'wdth' 100" }}>
-        <p className="leading-[1.2]">BaaS Platform</p>
+        <p className="leading-[1.2]">Partner Platform</p>
       </div>
       <div className="flex flex-col justify-center relative shrink-0" style={{ fontVariationSettings: "'wdth' 100" }}>
         <p className="leading-[1.2]">Developers</p>

@@ -63,7 +63,7 @@ function Frame4() {
   return (
     <div className="absolute bottom-[200px] content-stretch flex flex-col gap-[52px] items-start left-[calc(8.33%+34px)] not-italic">
       <div className="flex flex-col font-['Lead_Sans_Variable:Medium',sans-serif] font-[493.75] justify-center leading-[0] relative shrink-0 text-[#606171] text-[14px] whitespace-nowrap" style={{ fontVariationSettings: "'wdth' 100" }}>
-        <p className="leading-[1.2]">BaaS Platform</p>
+        <p className="leading-[1.2]">Partner Platform</p>
       </div>
       <div className="flex flex-col font-['Lead_Sans_Variable:Medium',sans-serif] font-[493.75] justify-end leading-[0] relative shrink-0 text-[#2b2c39] text-[116px] tracking-[-2.32px] w-[909px]" style={{ fontVariationSettings: "'wdth' 100" }}>
         <p className="leading-none mb-0">Move Fast.</p>
@@ -80,7 +80,7 @@ function Frame2() {
   return (
     <div className="-translate-x-1/2 absolute content-stretch flex font-['Lead_Sans_Variable:Medium',sans-serif] font-[493.75] items-center justify-between leading-[0] left-[calc(50%-541px)] not-italic text-[#2b2c39] text-[14px] top-[53px] w-[450px] whitespace-nowrap">
       <div className="flex flex-col justify-center relative shrink-0" style={{ fontVariationSettings: "'wdth' 100" }}>
-        <p className="leading-[1.2]">BaaS Platform</p>
+        <p className="leading-[1.2]">Partner Platform</p>
       </div>
       <div className="flex flex-col justify-center relative shrink-0" style={{ fontVariationSettings: "'wdth' 100" }}>
         <p className="leading-[1.2]">Developers</p>
@@ -182,7 +182,7 @@ export default function Desktop() {
           01 — 05
         </p>
         <div className="-translate-y-1/2 absolute flex flex-col font-['Lead_Sans_Variable:Medium',sans-serif] font-[493.75] justify-center leading-[0] left-[194px] not-italic text-[#2b2c39] text-[14px] top-[49px] whitespace-nowrap" style={{ fontVariationSettings: "'wdth' 100" }}>
-          <p className="leading-[1.2]">BaaS Platform</p>
+          <p className="leading-[1.2]">Partner Platform</p>
         </div>
       </div>
       <Frame4 />

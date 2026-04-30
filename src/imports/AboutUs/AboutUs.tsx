@@ -95,7 +95,7 @@ function NavItems() {
   return (
     <div className="absolute content-stretch flex font-['Lead_Sans_Variable:Regular',sans-serif] font-normal gap-[49px] items-center leading-[0] left-[116px] not-italic text-[#3c4043] text-[14px] top-[16.5px] whitespace-nowrap" data-name="Nav Items">
       <div className="flex flex-col justify-center relative shrink-0" style={{ fontVariationSettings: "'wdth' 100" }}>
-        <p className="leading-[normal]">BaaS platform</p>
+        <p className="leading-[normal]">Partner Platform</p>
       </div>
       <div className="flex flex-col justify-center relative shrink-0" style={{ fontVariationSettings: "'wdth' 100" }}>
         <p className="leading-[normal]">Developers</p>
@@ -664,7 +664,7 @@ function Frame16() {
         <p className="leading-[normal]">Let’s Build the Future of Banking Together.</p>
       </div>
       <p className="leading-[normal] relative shrink-0 text-[#3c4043] text-[16px] w-[751px]" style={{ fontVariationSettings: "'wdth' 100", fontFeatureSettings: "'calt' 0" }}>
-        Lead Bank was reimagined for the builders shaping what’s next. Our BaaS Platform combines a century of banking trust with real fintech experience — giving innovators the foundation to launch, scale, and grow with confidence.
+        Lead Bank was reimagined for the builders shaping what’s next. Our Partner Platform combines a century of banking trust with real fintech experience — giving innovators the foundation to launch, scale, and grow with confidence.
       </p>
     </div>
   );
@@ -677,7 +677,7 @@ function Frame17() {
       <div className="bg-[#3c4043] content-stretch flex items-center justify-center px-[24px] py-[12px] relative shrink-0" data-name="Button">
         <div aria-hidden="true" className="absolute border border-[#3c4043] border-solid inset-[-1px] pointer-events-none" />
         <p className="font-['Lead_Sans_Variable:Regular',sans-serif] font-normal leading-[normal] not-italic relative shrink-0 text-[16px] text-white whitespace-nowrap" style={{ fontVariationSettings: "'wdth' 100" }}>
-          Explore the BaaS platform
+          Explore the Partner Platform
         </p>
       </div>
     </div>

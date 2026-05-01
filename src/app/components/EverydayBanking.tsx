@@ -113,7 +113,7 @@ export function EverydayBanking({
           <button
             type="button"
             onClick={onNavigatePersonal}
-            className="flex h-[48px] w-fit cursor-pointer items-center gap-[12px] rounded-[24px] border-0 bg-white px-[32px] py-[12px] font-['Lead_Sans_Variable:Medium',sans-serif] text-[14px] text-[#2b2c39] shadow-[0_1px_12px_rgba(43,44,57,0.05)] transition-[filter] hover:brightness-[0.92]"
+            className="site-cta-button flex h-[48px] w-fit cursor-pointer items-center gap-[12px] rounded-[24px] border-0 bg-white px-[32px] py-[12px] font-['Lead_Sans_Variable:Medium',sans-serif] text-[14px] text-[#2b2c39] shadow-[0_1px_12px_rgba(43,44,57,0.05)]"
             style={{ fontVariationSettings: "'wdth' 100" }}
           >
             Personal Banking
@@ -122,7 +122,7 @@ export function EverydayBanking({
           <button
             type="button"
             onClick={onNavigateBusiness}
-            className="flex h-[48px] w-fit cursor-pointer items-center gap-[12px] rounded-[24px] border-0 bg-white px-[32px] py-[12px] font-['Lead_Sans_Variable:Medium',sans-serif] text-[14px] text-[#2b2c39] shadow-[0_1px_12px_rgba(43,44,57,0.05)] transition-[filter] hover:brightness-[0.92]"
+            className="site-cta-button flex h-[48px] w-fit cursor-pointer items-center gap-[12px] rounded-[24px] border-0 bg-white px-[32px] py-[12px] font-['Lead_Sans_Variable:Medium',sans-serif] text-[14px] text-[#2b2c39] shadow-[0_1px_12px_rgba(43,44,57,0.05)]"
             style={{ fontVariationSettings: "'wdth' 100" }}
           >
             Business Banking

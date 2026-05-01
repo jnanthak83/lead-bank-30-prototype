@@ -547,7 +547,7 @@ export function Nav({
             <button
               type="button"
               onClick={() => onNavigate?.("console")}
-              className="h-[40px] px-[20px] rounded-[24px] text-[13px] font-['Lead_Sans_Variable:Medium',sans-serif] border transition-[filter] hover:brightness-[0.92]"
+              className="site-cta-button h-[40px] px-[20px] rounded-[24px] text-[13px] font-['Lead_Sans_Variable:Medium',sans-serif] border"
               style={{
                 fontVariationSettings: "'wdth' 100",
                 background: dark ? "rgba(255,255,255,0.08)" : "#ffffff",
@@ -560,7 +560,7 @@ export function Nav({
             <button
               type="button"
               onClick={() => onNavigate?.("login")}
-              className="h-[40px] px-[28px] rounded-[24px] text-white text-[13px] font-['Lead_Sans_Variable:Medium',sans-serif] bg-[#0040ff] shadow-[0px_6px_12px_rgba(0,144,255,0.24)] transition-[filter] hover:brightness-[0.92]"
+              className="site-cta-button h-[40px] px-[28px] rounded-[24px] text-white text-[13px] font-['Lead_Sans_Variable:Medium',sans-serif] bg-[#0040ff] shadow-[0px_6px_12px_rgba(0,144,255,0.24)]"
               style={{ fontVariationSettings: "'wdth' 100" }}
             >
               Login

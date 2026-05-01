@@ -149,30 +149,13 @@ export default function App() {
         [data-name^="Desktop -"] > .absolute.content-stretch.flex.flex-col.gap-\\[7px\\].items-start.w-\\[22px\\] { display: none !important; }
         [data-name^="Desktop -"].rounded-\\[20px\\] { border-radius: 0 !important; }
         [data-name="btn"]:has([data-name="Icon=arrow_long_right"]) { display: none !important; }
-        [data-current-page="baas"] [data-name="Button"],
-        [data-current-page="move"] [data-name="Button"],
-        [data-current-page="lend"] [data-name="Button"],
-        [data-current-page="issue"] [data-name="Button"],
-        [data-current-page="store"] [data-name="Button"],
-        [data-current-page="personal"] [data-name="Button"],
-        [data-current-page="business"] [data-name="Button"],
-        [data-current-page="about"] [data-name="Button"],
-        [data-current-page="leadership"] [data-name="Button"],
-        [data-current-page="blog"] [data-name="Button"],
-        [data-current-page="careers"] [data-name="Button"] {
+        [data-name="Button"],
+        .site-cta-button {
+          cursor: pointer;
           transition: filter 180ms ease, background-color 180ms ease, opacity 180ms ease;
         }
-        [data-current-page="baas"] [data-name="Button"]:hover,
-        [data-current-page="move"] [data-name="Button"]:hover,
-        [data-current-page="lend"] [data-name="Button"]:hover,
-        [data-current-page="issue"] [data-name="Button"]:hover,
-        [data-current-page="store"] [data-name="Button"]:hover,
-        [data-current-page="personal"] [data-name="Button"]:hover,
-        [data-current-page="business"] [data-name="Button"]:hover,
-        [data-current-page="about"] [data-name="Button"]:hover,
-        [data-current-page="leadership"] [data-name="Button"]:hover,
-        [data-current-page="blog"] [data-name="Button"]:hover,
-        [data-current-page="careers"] [data-name="Button"]:hover {
+        [data-name="Button"]:hover,
+        .site-cta-button:hover {
           filter: brightness(0.92);
         }
       `}</style>

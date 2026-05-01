@@ -118,7 +118,7 @@ function SubmitButton() {
   return (
     <button
       type="submit"
-      className="mt-[34px] flex h-[60px] w-full items-center justify-center rounded-[8px] border-0 bg-[#8b9296] font-['Lead_Sans_Variable:Regular',sans-serif] text-[22px] text-white transition-[filter] hover:brightness-[0.92]"
+      className="site-cta-button mt-[34px] flex h-[60px] w-full items-center justify-center rounded-[8px] border-0 bg-[#8b9296] font-['Lead_Sans_Variable:Regular',sans-serif] text-[22px] text-white"
       style={{ fontVariationSettings: "'wdth' 100" }}
     >
       Submit
@@ -281,7 +281,7 @@ function SupportSection() {
           <p className="font-['Lead_Sans_Variable:Regular',sans-serif] text-[16px] text-[#606171]" style={{ fontVariationSettings: "'wdth' 100" }}>
             Monday - Friday, 8am - 5pm CT
           </p>
-          <button className="h-[42px] w-fit rounded-[6px] border-0 bg-[#8b9296] px-[28px] font-['Lead_Sans_Variable:Regular',sans-serif] text-[15px] text-white" type="button" style={{ fontVariationSettings: "'wdth' 100" }}>
+          <button className="site-cta-button h-[42px] w-fit rounded-[6px] border-0 bg-[#8b9296] px-[28px] font-['Lead_Sans_Variable:Regular',sans-serif] text-[15px] text-white" type="button" style={{ fontVariationSettings: "'wdth' 100" }}>
             Start a conversation
           </button>
         </div>
@@ -374,7 +374,7 @@ function CareersBand({ onNavigate }: { onNavigate?: (page: Page, section?: strin
         <button
           type="button"
           onClick={() => onNavigate?.("careers")}
-          className="mt-[34px] h-[48px] rounded-[6px] border-0 bg-[#8b9296] px-[34px] font-['Lead_Sans_Variable:Regular',sans-serif] text-[16px] text-white transition-[filter] hover:brightness-[0.92]"
+          className="site-cta-button mt-[34px] h-[48px] rounded-[6px] border-0 bg-[#8b9296] px-[34px] font-['Lead_Sans_Variable:Regular',sans-serif] text-[16px] text-white"
           style={{ fontVariationSettings: "'wdth' 100" }}
         >
           See open positions

@@ -270,7 +270,7 @@ export function SiteFooter({
             <button
               type="button"
               onClick={() => handle({ page: "contact" })}
-              className="inline-flex h-[42px] w-fit items-center rounded-[16px] border-0 bg-[#eaeaee] px-[26px] font-['Lead_Sans_Variable:Medium',sans-serif] text-[14px] text-[#2b2c39] transition-[filter] hover:brightness-[0.95]"
+              className="site-cta-button inline-flex h-[42px] w-fit items-center rounded-[16px] border-0 bg-[#eaeaee] px-[26px] font-['Lead_Sans_Variable:Medium',sans-serif] text-[14px] text-[#2b2c39]"
               style={{ fontVariationSettings: "'wdth' 100" }}
             >
               Contact us

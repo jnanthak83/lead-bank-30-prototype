@@ -84,7 +84,7 @@ export function PartnerPlatform({ onNavigate }: { onNavigate?: () => void }) {
           type="button"
           onClick={onNavigate}
           data-name="Button"
-          className="flex h-[48px] w-fit items-center justify-center gap-[12px] rounded-[24px] bg-white px-[32px] py-[12px] font-['Lead_Sans_Variable:Medium',sans-serif] text-[14px] text-[#2b2c39]"
+          className="site-cta-button flex h-[48px] w-fit cursor-pointer items-center justify-center gap-[12px] rounded-[24px] border-0 bg-white px-[32px] py-[12px] font-['Lead_Sans_Variable:Medium',sans-serif] text-[14px] text-[#2b2c39]"
           style={{ fontVariationSettings: "'wdth' 100" }}
         >
           Explore our Partner Platform capabilities

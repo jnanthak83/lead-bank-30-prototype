@@ -2,7 +2,11 @@ import svgPaths from "./svg-p6ygcdiwrs";
 import imgHome from "./00b7a85efd5530ed04836de8cb6b3380a5f23726.png";
 import imgHome1 from "./2e0d7621d24b5cac2ad309914b257bd34a82cccf.png";
 
-function Frame6() {
+type Desktop778Props = {
+  onNavigateAbout?: () => void;
+};
+
+function Frame6({ onNavigateAbout }: Desktop778Props) {
   return (
     <div className="-translate-y-1/2 absolute content-stretch flex flex-col gap-[42px] items-start left-[1040px] top-[calc(50%+0.5px)]">
       <div className="flex flex-col font-['Lead_Sans_Variable:Regular',sans-serif] font-normal justify-end leading-[0] not-italic relative shrink-0 text-[#2b2c39] text-[72px]" style={{ fontVariationSettings: "'wdth' 100" }}>
@@ -12,7 +16,7 @@ function Frame6() {
       <p className="font-['Lead_Sans_Variable:Regular',sans-serif] font-normal leading-[1.3] not-italic relative shrink-0 text-[#606171] text-[24px] w-[560px]" style={{ fontVariationSettings: "'wdth' 100" }}>
         Our team has been in your shoes. We know where bank partnerships usually break down, so we built the infrastructure we wished existed. Designed for founders by founders, Lead brings together not just banking experience and fintech expertise, but industry-recognized excellence across the board.
       </p>
-      <div className="bg-white content-stretch flex gap-[12px] h-[48px] items-center justify-center px-[32px] py-[12px] relative rounded-[24px] shrink-0" data-name="Button">
+      <button className="bg-white border-0 content-stretch cursor-pointer flex gap-[12px] h-[48px] items-center justify-center px-[32px] py-[12px] relative rounded-[24px] shrink-0" data-name="Button" onClick={onNavigateAbout} type="button">
         <div className="flex flex-col font-['Lead_Sans_Variable:Medium',sans-serif] font-[493.75] justify-center leading-[0] not-italic relative shrink-0 text-[#2b2c39] text-[14px] whitespace-nowrap" style={{ fontVariationSettings: "'wdth' 100" }}>
           <p className="leading-[1.2]">Learn More About Us</p>
         </div>
@@ -25,7 +29,7 @@ function Frame6() {
             </div>
           </div>
         </div>
-      </div>
+      </button>
     </div>
   );
 }
@@ -419,7 +423,7 @@ function Frame5() {
   );
 }
 
-export default function Desktop() {
+export default function Desktop({ onNavigateAbout }: Desktop778Props) {
   return (
     <div className="bg-[#eaeaee] relative size-full" data-name="Desktop - 778">
       <div className="absolute h-[1080px] left-0 top-0 w-[1920px]" data-name="Home">
@@ -428,7 +432,7 @@ export default function Desktop() {
           <img alt="" className="absolute max-w-none object-cover size-full" src={imgHome1} />
         </div>
       </div>
-      <Frame6 />
+      <Frame6 onNavigateAbout={onNavigateAbout} />
       <Frame7 />
       <Frame8 />
       <Frame9 />

@@ -4,6 +4,7 @@ import imgSecondA from "../../imports/Desktop783/12c918142de4b304180b81c413c2280
 import imgSecondB from "../../imports/Desktop783/6b81bfb3106012cf611bd112c0e7422c99009f72.png";
 import imgThirdA from "../../imports/Desktop784/8fb611c0042363fbc81584c0c50ae1750f2f4092.png";
 import imgThirdB from "../../imports/Desktop784/085c9962dd56d4998b8d9b1b9e58fa8b56b6f1c8.png";
+import { ArrowRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 const SLIDES = [
@@ -36,7 +37,13 @@ function BackgroundLayer({
   );
 }
 
-export function EverydayBanking() {
+export function EverydayBanking({
+  onNavigatePersonal,
+  onNavigateBusiness,
+}: {
+  onNavigatePersonal?: () => void;
+  onNavigateBusiness?: () => void;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const [hasStarted, setHasStarted] = useState(false);
 
@@ -102,6 +109,26 @@ export function EverydayBanking() {
         >
           From personal checking and savings to business accounts and loans, we provide reliable banking solutions for individuals, families, and local businesses.
         </p>
+        <div className="flex flex-wrap gap-[12px]">
+          <button
+            type="button"
+            onClick={onNavigatePersonal}
+            className="flex h-[48px] w-fit cursor-pointer items-center gap-[12px] rounded-[24px] border-0 bg-white px-[32px] py-[12px] font-['Lead_Sans_Variable:Medium',sans-serif] text-[14px] text-[#2b2c39] shadow-[0_1px_12px_rgba(43,44,57,0.05)] transition-[filter] hover:brightness-[0.92]"
+            style={{ fontVariationSettings: "'wdth' 100" }}
+          >
+            Personal Banking
+            <ArrowRight size={16} color="#606171" />
+          </button>
+          <button
+            type="button"
+            onClick={onNavigateBusiness}
+            className="flex h-[48px] w-fit cursor-pointer items-center gap-[12px] rounded-[24px] border-0 bg-white px-[32px] py-[12px] font-['Lead_Sans_Variable:Medium',sans-serif] text-[14px] text-[#2b2c39] shadow-[0_1px_12px_rgba(43,44,57,0.05)] transition-[filter] hover:brightness-[0.92]"
+            style={{ fontVariationSettings: "'wdth' 100" }}
+          >
+            Business Banking
+            <ArrowRight size={16} color="#606171" />
+          </button>
+        </div>
       </div>
     </div>
   );

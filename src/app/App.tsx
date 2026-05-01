@@ -22,6 +22,7 @@ import { StubPage } from "./components/StubPage";
 import { PartnerPlatform } from "./components/PartnerPlatform";
 import { EverydayBanking } from "./components/EverydayBanking";
 import { JackieProfile } from "./components/JackieProfile";
+import { ContactPage } from "./components/ContactPage";
 
 const LEND_ITEMS = [
   { id: "embedded-credit", title: "Embedded credit" },
@@ -44,8 +45,8 @@ const sections = [
   HeroRotating,
   Desktop807,
   PartnerPlatform,
-  Desktop778,
   EverydayBanking,
+  Desktop778,
 ];
 
 export type Page =
@@ -64,6 +65,7 @@ export type Page =
   | "accessibility"
   | "console"
   | "login"
+  | "contact"
   | "move"
   | "lend"
   | "issue"
@@ -194,7 +196,25 @@ export default function App() {
         <div className="w-full relative">
           {sections.map((Section, i) => (
             <Reveal key={i}>
-              {Section === PartnerPlatform ? (
+              {Section === Desktop778 ? (
+                <Desktop778
+                  onNavigateAbout={() => {
+                    setPage("about");
+                    setSection(undefined);
+                  }}
+                />
+              ) : Section === EverydayBanking ? (
+                <EverydayBanking
+                  onNavigatePersonal={() => {
+                    setPage("personal");
+                    setSection(undefined);
+                  }}
+                  onNavigateBusiness={() => {
+                    setPage("business");
+                    setSection(undefined);
+                  }}
+                />
+              ) : Section === PartnerPlatform ? (
                 <PartnerPlatform
                   onNavigate={() => {
                     setPage("baas");
@@ -351,6 +371,13 @@ export default function App() {
             setSection(s);
           }}
         />
+      ) : page === "contact" ? (
+        <ContactPage
+          onNavigate={(p, s) => {
+            setPage(p);
+            setSection(s);
+          }}
+        />
       ) : USE_CASE_PAGES[page] ? (
         <UseCasePage
           useCase={USE_CASE_PAGES[page]}
@@ -381,7 +408,7 @@ export default function App() {
         />
       )}
 
-      {!stubPage && !isCapabilityPage && page !== "about" && page !== "leadership" && page !== "jackie" && page !== "blog" && <ScrollIndicator
+      {!stubPage && !isCapabilityPage && page !== "about" && page !== "leadership" && page !== "jackie" && page !== "blog" && page !== "contact" && <ScrollIndicator
         total={
           page === "home"
             ? sections.length
@@ -426,6 +453,8 @@ export default function App() {
             ? "Jackie Reses"
             : page === "blog"
             ? "Blog"
+            : page === "contact"
+            ? "Contact"
             : USE_CASE_LABELS[page]
             ? USE_CASE_LABELS[page]
             : stubPage
@@ -452,6 +481,8 @@ export default function App() {
             : page === "jackie"
             ? 1
             : page === "blog"
+            ? 1
+            : page === "contact"
             ? 1
             : USE_CASE_PAGES[page]
             ? 1

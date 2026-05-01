@@ -18,6 +18,7 @@ type Page =
   | "accessibility"
   | "console"
   | "login"
+  | "contact"
   | "move"
   | "lend"
   | "issue"
@@ -517,7 +518,7 @@ export function Nav({
                 (l.key === "banking" && (page === "personal" || page === "business")) ||
                 (l.key === "baas" && page === "baas") ||
                 (l.key === "about" &&
-                  (page === "about" || page === "leadership" || page === "jackie" || page === "careers" || page === "blog"));
+                  (page === "about" || page === "leadership" || page === "jackie" || page === "careers" || page === "blog" || page === "contact"));
               return (
                 <div
                   key={l.key}

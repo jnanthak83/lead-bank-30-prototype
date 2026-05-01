@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { ReactNode } from "react";
-import { Code2, Home } from "lucide-react";
+import { Home } from "lucide-react";
 import type { Page } from "../App";
 
 type NavTarget = { page: Page; section?: string };
@@ -124,17 +124,15 @@ const BOTTOM_LINKS: LegalItem[] = [
 function FooterLink({
   label,
   onClick,
-  tone = "panel",
   level = 0,
 }: {
   label: string;
   onClick: () => void;
-  tone?: "panel" | "body";
   level?: number;
 }) {
   const [hover, setHover] = useState(false);
-  const base = tone === "panel" ? "#ffffff" : "#2b2c39";
-  const secondary = tone === "panel" ? "rgba(255,255,255,0.72)" : "#606171";
+  const base = "#2b2c39";
+  const secondary = "#606171";
 
   return (
     <button
@@ -145,7 +143,7 @@ function FooterLink({
       className="block cursor-pointer border-0 bg-transparent p-0 text-left font-['Lead_Sans_Variable:Regular',sans-serif] transition-colors"
       style={{
         fontVariationSettings: "'wdth' 100",
-        color: hover ? "#ffffff" : level > 0 ? secondary : base,
+        color: hover ? "#0040ff" : level > 0 ? secondary : base,
         fontSize: level > 0 ? 12 : 14,
         lineHeight: 1.45,
         opacity: hover ? 1 : level > 0 ? 0.86 : 1,
@@ -190,32 +188,10 @@ function FooterItem({
   );
 }
 
-function Logo({ onClick }: { onClick: () => void }) {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      className="flex items-center gap-[10px] border-0 bg-transparent p-0 text-white"
-      aria-label="Lead Bank home"
-    >
-      <span className="relative block size-[30px] overflow-hidden rounded-[3px] bg-[#0040ff]">
-        <span className="absolute inset-y-0 right-0 w-[58%] bg-[#7a00ff]" />
-        <span className="absolute bottom-0 left-0 h-[58%] w-[58%] bg-[#47baff]" />
-      </span>
-      <span
-        className="font-['Lead_Sans_Variable:Medium',sans-serif] text-[24px] leading-none"
-        style={{ fontVariationSettings: "'wdth' 100" }}
-      >
-        Lead Bank
-      </span>
-    </button>
-  );
-}
-
 function SocialBadge({ label }: { label: string }) {
   return (
     <div
-      className="flex size-[38px] items-center justify-center rounded-[12px] bg-white font-['Lead_Sans_Variable:Medium',sans-serif] text-[16px] text-[#2b2c39]"
+      className="flex size-[38px] items-center justify-center rounded-[12px] bg-white font-['Lead_Sans_Variable:Medium',sans-serif] text-[16px] text-[#2b2c39] shadow-[0_1px_8px_rgba(43,44,57,0.06)]"
       style={{ fontVariationSettings: "'wdth' 100" }}
       aria-label={label}
     >
@@ -251,60 +227,13 @@ export function SiteFooter({
 
   return (
     <footer className="w-full" style={{ background: pageBg }}>
-      <div className="mx-auto max-w-[1920px] px-[40px] py-[32px]">
-        <section className="relative min-h-[620px] overflow-hidden rounded-[56px] bg-[#8f939c] px-[32px] py-[28px] text-white md:px-[56px]">
-          <div
-            aria-hidden="true"
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(118deg, rgba(183,185,190,0.95) 0%, rgba(134,138,147,0.96) 48%, rgba(192,184,173,0.92) 100%)",
-            }}
-          />
-          <div aria-hidden="true" className="absolute inset-0 bg-black/10" />
-
-          <div className="relative z-10 flex flex-wrap items-center gap-[24px]">
-            <Logo onClick={() => handle({ page: "home" })} />
-            <div className="flex flex-wrap gap-[32px] md:ml-[48px]">
-              {[
-                { label: "Partner Platform", target: { page: "baas" as Page } },
-                { label: "Developers", target: { page: "api-docs" as Page } },
-                { label: "Banking", target: { page: "business" as Page } },
-                { label: "Company", target: { page: "about" as Page } },
-              ].map((item) => (
-                <FooterLink
-                  key={item.label}
-                  label={item.label}
-                  onClick={() => handle(item.target)}
-                />
-              ))}
-            </div>
-            <div className="ml-auto flex gap-[12px]">
-              <button
-                type="button"
-                onClick={() => handle({ page: "console" })}
-                className="flex h-[42px] items-center gap-[10px] rounded-[16px] border-0 bg-white/12 px-[20px] font-['Lead_Sans_Variable:Medium',sans-serif] text-[14px] text-white backdrop-blur-[20px] transition-[filter] hover:brightness-[0.92]"
-                style={{ fontVariationSettings: "'wdth' 100" }}
-              >
-                <Code2 size={18} />
-                Console
-              </button>
-              <button
-                type="button"
-                onClick={() => handle({ page: "login" })}
-                className="h-[42px] rounded-[16px] border-0 bg-[#3f00ff] px-[28px] font-['Lead_Sans_Variable:Medium',sans-serif] text-[14px] text-white transition-[filter] hover:brightness-[0.92]"
-                style={{ fontVariationSettings: "'wdth' 100" }}
-              >
-                Login
-              </button>
-            </div>
-          </div>
-
-          <div className="relative z-10 mt-[160px] grid grid-cols-2 gap-x-[36px] gap-y-[42px] md:grid-cols-3 xl:grid-cols-[repeat(6,minmax(0,1fr))_170px]">
+      <div className="w-full pb-[32px]">
+        <section className="relative min-h-[520px] w-full overflow-hidden rounded-b-[56px] bg-[#f4f4f6] px-[40px] py-[92px] text-[#2b2c39] md:px-[96px]">
+          <div className="grid grid-cols-2 gap-x-[36px] gap-y-[42px] md:grid-cols-3 xl:grid-cols-[repeat(6,minmax(0,1fr))_170px]">
             {NAV_COLUMNS.map((col) => (
               <div key={col.title} className="flex flex-col gap-[20px]">
                 <p
-                  className="font-['Lead_Sans_Variable:Regular',sans-serif] text-[24px] leading-[1.1] text-white"
+                  className="font-['Lead_Sans_Variable:Regular',sans-serif] text-[24px] leading-[1.1] text-[#2b2c39]"
                   style={{ fontVariationSettings: "'wdth' 100" }}
                 >
                   {col.title}
@@ -319,7 +248,7 @@ export function SiteFooter({
 
             <div className="flex flex-col gap-[18px]">
               <p
-                className="font-['Lead_Sans_Variable:Medium',sans-serif] text-[14px] text-white"
+                className="font-['Lead_Sans_Variable:Medium',sans-serif] text-[14px] text-[#606171]"
                 style={{ fontVariationSettings: "'wdth' 100" }}
               >
                 Stay tuned
@@ -332,19 +261,20 @@ export function SiteFooter({
           </div>
         </section>
 
-        <section className="grid gap-[56px] px-[8px] py-[76px] lg:grid-cols-[1.5fr_0.8fr_0.8fr_0.8fr_0.7fr]">
+        <section className="mx-auto grid max-w-[1680px] gap-[56px] px-[40px] py-[76px] lg:grid-cols-[1.5fr_0.8fr_0.8fr_0.8fr_0.7fr]">
           <div className="flex max-w-[430px] flex-col gap-[24px]">
             <InfoHeading>Support</InfoHeading>
             <FooterText>
               Have questions or need support? We're here to help. For account support, technical help, or any other inquiries, reach out anytime.
             </FooterText>
-            <a
-              href="mailto:clientsupport@lead.bank"
-              className="inline-flex h-[42px] w-fit items-center rounded-[16px] bg-[#eaeaee] px-[26px] font-['Lead_Sans_Variable:Medium',sans-serif] text-[14px] text-[#2b2c39] no-underline transition-[filter] hover:brightness-[0.95]"
+            <button
+              type="button"
+              onClick={() => handle({ page: "contact" })}
+              className="inline-flex h-[42px] w-fit items-center rounded-[16px] border-0 bg-[#eaeaee] px-[26px] font-['Lead_Sans_Variable:Medium',sans-serif] text-[14px] text-[#2b2c39] transition-[filter] hover:brightness-[0.95]"
               style={{ fontVariationSettings: "'wdth' 100" }}
             >
               Contact us
-            </a>
+            </button>
           </div>
 
           <div className="flex flex-col gap-[22px]">
@@ -394,7 +324,7 @@ export function SiteFooter({
           </div>
         </section>
 
-        <section className="flex flex-col gap-[24px] border-t border-[#d8d8df] px-[8px] py-[28px] lg:flex-row lg:items-center lg:justify-between">
+        <section className="mx-auto flex max-w-[1680px] flex-col gap-[24px] border-t border-[#d8d8df] px-[40px] py-[28px] lg:flex-row lg:items-center lg:justify-between">
           <div
             className="flex flex-wrap gap-x-[34px] gap-y-[12px] font-['Lead_Sans_Variable:Regular',sans-serif] text-[12px] text-[#606171]"
             style={{ fontVariationSettings: "'wdth' 100" }}

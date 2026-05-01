@@ -103,6 +103,7 @@ const NAV_COLUMNS: Group[] = [
     items: [
       { label: "About", target: { page: "about" } },
       { label: "Careers at Lead", target: { page: "careers" } },
+      { label: "Job board", target: { page: "job-board" } },
       { label: "Leadership team", target: { page: "leadership" } },
       { label: "Blog", target: { page: "blog" } },
     ],

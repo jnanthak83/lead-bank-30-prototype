@@ -1,5 +1,4 @@
 import svgPaths from "./svg-vvxvxvkbtc";
-import imgImage12 from "./84913455a250bddf90b0cef8065bcaa60fe29379.png";
 import imgDepth7Frame12 from "./d568b164c26b35eebe6a407c03f478bc8049c84b.png";
 import imgImage2 from "./eb6f66a53e762ab965933851eab8c6142c94c530.png";
 import imgImage3 from "./373e160d1dc05abb8bb8a63374d753344687ae94.png";
@@ -206,21 +205,6 @@ function Frame3() {
   );
 }
 
-function Group1() {
-  return (
-    <div className="absolute contents left-[1579.86px] top-[343px]">
-      <div className="absolute bg-white h-[337px] left-[1579.86px] rounded-[16px] top-[343px] w-[259.971px]" data-name="mohammed and nurun in second house 2">
-        <div aria-hidden="true" className="absolute border-b-5 border-l-5 border-r-5 border-solid border-t-30 border-white inset-[-30px_-5px_-5px_-5px] pointer-events-none rounded-[21px] shadow-[0px_131px_37px_0px_rgba(0,0,0,0),0px_84px_34px_0px_rgba(0,0,0,0.01),0px_47px_28px_0px_rgba(0,0,0,0.05),0px_21px_21px_0px_rgba(0,0,0,0.09),0px_5px_12px_0px_rgba(0,0,0,0.1)]" />
-      </div>
-      <div className="absolute h-[291.817px] left-[1586.67px] rounded-[10px] top-[356.77px] w-[197.247px]" data-name="image 12">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[10px]">
-          <img alt="" className="absolute h-[214.86%] left-[-307.38%] max-w-none top-[-5.62%] w-[436.49%]" src={imgImage12} />
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function Baas() {
   return (
     <div className="bg-white h-[1024px] overflow-clip relative shrink-0 w-full" data-name="BAAS_0">
@@ -232,7 +216,6 @@ function Baas() {
         </div>
       </div>
       <Frame3 />
-      <Group1 />
       <div className="-translate-y-1/2 absolute flex flex-col font-['Lead_Sans_Variable:Regular',sans-serif] font-normal h-[878px] justify-center leading-[0] left-[calc(50%-539px)] not-italic text-[52px] text-black top-[522px] w-[1078px]" style={{ fontVariationSettings: "'wdth' 100" }}>
         <p>
           <span className="leading-[normal]">{`Since 1928, `}</span>
@@ -318,21 +301,6 @@ function Frame6() {
   );
 }
 
-function Group2() {
-  return (
-    <div className="absolute contents left-[1579.86px] top-[343px]">
-      <div className="absolute bg-white h-[337px] left-[1579.86px] rounded-[16px] top-[343px] w-[259.971px]" data-name="mohammed and nurun in second house 2">
-        <div aria-hidden="true" className="absolute border-b-5 border-l-5 border-r-5 border-solid border-t-30 border-white inset-[-30px_-5px_-5px_-5px] pointer-events-none rounded-[21px] shadow-[0px_131px_37px_0px_rgba(0,0,0,0),0px_84px_34px_0px_rgba(0,0,0,0.01),0px_47px_28px_0px_rgba(0,0,0,0.05),0px_21px_21px_0px_rgba(0,0,0,0.09),0px_5px_12px_0px_rgba(0,0,0,0.1)]" />
-      </div>
-      <div className="absolute h-[291.817px] left-[1586.67px] rounded-[10px] top-[356.77px] w-[197.247px]" data-name="image 12">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[10px]">
-          <img alt="" className="absolute h-[214.86%] left-[-307.38%] max-w-none top-[-5.62%] w-[436.49%]" src={imgImage12} />
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function Frame11() {
   return (
     <div className="content-stretch flex flex-col h-[229px] items-center justify-center relative shrink-0 w-[698px]">
@@ -365,7 +333,6 @@ function Baas2({ onExplorePartnerPlatform }: { onExplorePartnerPlatform?: () => 
         </div>
       </div>
       <Frame6 />
-      <Group2 />
       <Frame18 />
       <button
         className="absolute bg-[#3c4043] border-0 content-stretch cursor-pointer flex items-center justify-center left-[185px] px-[24px] py-[12px] top-[748px] transition-colors duration-200 hover:bg-[#2f3336]"

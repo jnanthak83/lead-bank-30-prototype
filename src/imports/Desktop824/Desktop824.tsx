@@ -68,7 +68,7 @@ function Frame4() {
       <div className="flex flex-col font-['Lead_Sans_Variable:Medium',sans-serif] font-[493.75] justify-end leading-[0] relative shrink-0 text-[#2b2c39] text-[116px] tracking-[-2.32px] w-[909px]" style={{ fontVariationSettings: "'wdth' 100" }}>
         <p className="leading-none">The Banking Partner Your Fintech Deserves</p>
       </div>
-      <p className="font-['Lead_Sans_Variable:Regular',sans-serif] font-normal leading-[1.3] relative shrink-0 text-[#606171] text-[32px] w-[866px]" style={{ fontVariationSettings: "'wdth' 100" }}>{`Trusted by the most innovative companies to power complex financial products, we provide compliant, API-driven banking infrastructure designed for control, flexibility, and scale. `}</p>
+      <p className="font-['Lead_Sans_Variable:Regular',sans-serif] font-normal leading-[1.3] relative shrink-0 text-[#606171] text-[32px] w-[866px]" style={{ fontVariationSettings: "'wdth' 100" }}>Trusted by the most innovative companies to power complex financial products, we provide compliant, API-driven banking infrastructure designed for control, flexibility, and scale.</p>
     </div>
   );
 }

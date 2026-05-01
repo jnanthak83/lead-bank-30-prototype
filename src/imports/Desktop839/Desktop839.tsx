@@ -186,23 +186,6 @@ function CapabilityRow({
       >
         {info.desc}
       </p>
-      <div className="content-stretch flex gap-[8px] items-center relative shrink-0">
-        <div
-          className="flex flex-col font-['Lead_Sans_Variable:Medium',sans-serif] font-[493.75] justify-center leading-[0] not-italic relative shrink-0 text-[#0040ff] text-[14px] whitespace-nowrap"
-          style={{ fontVariationSettings: "'wdth' 100" }}
-        >
-          <p className="leading-[1.2]">Explore {info.title}</p>
-        </div>
-        <div className="overflow-clip relative shrink-0 size-[16px]" data-name="arrow-right">
-          <div className="absolute inset-[20.83%]">
-            <div className="absolute inset-[-5.36%]">
-              <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 10.3333 10.3333">
-                <path d={svgPaths.p1ed54a80} stroke="var(--stroke-0, #0040FF)" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }

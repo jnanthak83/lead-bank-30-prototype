@@ -60,7 +60,7 @@ function Frame6() {
   );
 }
 
-function Frame4() {
+function Frame4({ onExploreSolution }: { onExploreSolution?: () => void }) {
   return (
     <div className="-translate-y-1/2 absolute content-stretch flex flex-col gap-[52px] items-start left-[calc(8.33%+34px)] top-1/2">
       <div className="flex flex-col font-['Lead_Sans_Variable:Medium',sans-serif] font-[493.75] justify-center leading-[0] not-italic relative shrink-0 text-[#606171] text-[14px] whitespace-nowrap" style={{ fontVariationSettings: "'wdth' 100" }}>
@@ -68,15 +68,15 @@ function Frame4() {
       </div>
       <div className="flex flex-col font-['Lead_Sans_Variable:Regular',sans-serif] font-normal justify-end leading-[0] not-italic relative shrink-0 text-[#2b2c39] text-[0px] tracking-[-1.44px] w-[677px]" style={{ fontVariationSettings: "'wdth' 100" }}>
         <p className="text-[72px]">
-          <span className="leading-[1.1]">{`Leads Products Empower Solutions for `}</span>
+          <span className="leading-[1.1]">{`Lead's Products Empower Solutions for `}</span>
           <span className="bg-clip-text font-['Lead_Sans_Variable:Medium',sans-serif] font-[493.75] leading-[1.1] not-italic text-[transparent] tracking-[-1.44px]" style={{ fontVariationSettings: "'wdth' 100", backgroundImage: "url('data:image/svg+xml;utf8,<svg viewBox=\\'0 0 677 208\\' xmlns=\\'http://www.w3.org/2000/svg\\' preserveAspectRatio=\\'none\\'><rect x=\\'0\\' y=\\'0\\' height=\\'100%\\' width=\\'100%\\' fill=\\'url(%23grad)\\' opacity=\\'1\\'/><defs><radialGradient id=\\'grad\\' gradientUnits=\\'userSpaceOnUse\\' cx=\\'0\\' cy=\\'0\\' r=\\'10\\' gradientTransform=\\'matrix(67.7 20.8 -54.16 26 -1.8791e-14 0)\\'><stop stop-color=\\'rgba(0,64,255,1)\\' offset=\\'0\\'/><stop stop-color=\\'rgba(12,56,255,1)\\' offset=\\'0.11194\\'/><stop stop-color=\\'rgba(24,48,255,1)\\' offset=\\'0.22388\\'/><stop stop-color=\\'rgba(47,32,255,1)\\' offset=\\'0.44775\\'/><stop stop-color=\\'rgba(71,16,255,1)\\' offset=\\'0.67163\\'/><stop stop-color=\\'rgba(94,0,255,1)\\' offset=\\'0.8955\\'/></radialGradient></defs></svg>'), linear-gradient(90deg, rgb(0, 64, 255) 0%, rgb(0, 64, 255) 100%)" }}>
             Crypto
           </span>
         </p>
       </div>
-      <div className="bg-white content-stretch flex gap-[12px] h-[48px] items-center justify-center px-[32px] py-[12px] relative rounded-[24px] shrink-0" data-name="Button">
+      <button type="button" onClick={onExploreSolution} className="bg-white border-0 content-stretch cursor-pointer flex gap-[12px] h-[48px] items-center justify-center px-[32px] py-[12px] relative rounded-[24px] shrink-0" data-name="Button">
         <div className="flex flex-col font-['Lead_Sans_Variable:Medium',sans-serif] font-[493.75] justify-center leading-[0] not-italic relative shrink-0 text-[#2b2c39] text-[14px] whitespace-nowrap" style={{ fontVariationSettings: "'wdth' 100" }}>
-          <p className="leading-[1.2]">Explore All Solutions</p>
+          <p className="leading-[1.2]">Explore Solution</p>
         </div>
         <div className="overflow-clip relative shrink-0 size-[16px]" data-name="arrow-right">
           <div className="absolute inset-[20.83%]" data-name="Icon">
@@ -87,7 +87,7 @@ function Frame4() {
             </div>
           </div>
         </div>
-      </div>
+      </button>
     </div>
   );
 }
@@ -184,7 +184,7 @@ function Button1() {
   );
 }
 
-export default function Desktop() {
+export default function Desktop({ onNavigate }: { onNavigate?: (page: "uc-crypto", section?: string) => void } = {}) {
   return (
     <div className="bg-[#eaeaee] relative size-full" data-name="Desktop - 833">
       <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[1080px] left-1/2 top-1/2 w-[1920px]" data-name="BaaS">
@@ -201,7 +201,7 @@ export default function Desktop() {
         </div>
       </div>
       <Frame6 />
-      <Frame4 />
+      <Frame4 onExploreSolution={() => onNavigate?.("uc-crypto")} />
       <div className="-translate-x-1/2 absolute h-[78px] left-1/2 top-0 w-[1920px]" data-name="MENU">
         <Frame2 />
         <Frame3 />

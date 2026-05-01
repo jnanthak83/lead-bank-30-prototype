@@ -393,12 +393,20 @@ function Frame10({ tab, onCompare }: { tab: typeof TABS[number]; onCompare: () =
   );
 }
 
-export default function Desktop() {
+export default function Desktop({ initialTab }: { initialTab?: number } = {}) {
   const [active, setActive] = useState(0);
   const [progress, setProgress] = useState(0);
   const [running, setRunning] = useState(true);
   const [tableOpen, setTableOpen] = useState(false);
   const startRef = useRef<number>(performance.now());
+
+  useEffect(() => {
+    if (typeof initialTab !== "number") return;
+    const nextTab = Math.max(0, Math.min(TABS.length - 1, initialTab));
+    setRunning(false);
+    setActive(nextTab);
+    setProgress(0);
+  }, [initialTab]);
 
   useEffect(() => {
     if (!running) return;

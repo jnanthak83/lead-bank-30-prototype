@@ -16,7 +16,8 @@ function Frame4() {
   return (
     <div className="-translate-y-1/2 absolute content-stretch flex flex-col font-['Lead_Sans_Variable:Regular',sans-serif] font-normal gap-[42px] items-start left-[calc(8.33%+34px)] not-italic top-1/2">
       <div className="flex flex-col justify-end leading-[0] relative shrink-0 text-[#2b2c39] text-[72px] tracking-[-1.44px] w-[703px]" style={{ fontVariationSettings: "'wdth' 100" }}>
-        <p className="leading-[1.1]">Meet the Platform Designed to Flex</p>
+        <p className="leading-[1.1] mb-0">A Platform</p>
+        <p className="leading-[1.1]">Designed to Flex</p>
       </div>
       <p className="leading-[1.3] relative shrink-0 text-[#606171] text-[24px] w-[666px]" style={{ fontVariationSettings: "'wdth' 100" }}>
         Our modular building blocks let you assemble exactly what your product requires. Start with the capabilities you need today, add more over time, and deliver financial experiences that adapt as your business grows.

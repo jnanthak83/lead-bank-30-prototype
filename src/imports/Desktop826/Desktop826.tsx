@@ -7,7 +7,7 @@ function Frame4() {
       <div className="flex flex-col justify-end leading-[0] relative shrink-0 text-[#2b2c39] text-[72px] tracking-[-1.44px] w-[726px]" style={{ fontVariationSettings: "'wdth' 100" }}>
         <p className="leading-[1.1]">Embedded Finance at Your Fingertips</p>
       </div>
-      <p className="leading-[1.3] relative shrink-0 text-[#606171] text-[24px] w-[666px]" style={{ fontVariationSettings: "'wdth' 100" }}>{`Whether you utilize them bundled or unbundled, our programmable banking primitives integrate seamlessly into your customer experience. `}</p>
+      <p className="leading-[1.3] relative shrink-0 text-[#606171] text-[24px] w-[666px]" style={{ fontVariationSettings: "'wdth' 100" }}>Whether you utilize them bundled or unbundled, our programmable banking primitives integrate seamlessly into your customer experience.</p>
     </div>
   );
 }

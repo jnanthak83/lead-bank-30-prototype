@@ -187,7 +187,7 @@ function Frame9() {
 
 function Frame18() {
   return (
-    <div className="absolute backdrop-blur-[40px] bg-[rgba(255,255,255,0.32)] content-stretch flex flex-col gap-[10px] h-[240px] items-start left-[calc(41.67%+12px)] pb-[104px] pl-[40px] pr-[67px] pt-[40px] rounded-[52px] top-[176px] w-[452px]">
+    <div className="absolute backdrop-blur-[40px] bg-[rgba(255,255,255,0.32)] content-stretch flex flex-col gap-[10px] h-[240px] items-start left-[calc(41.67%+12px)] pb-[104px] pl-[40px] pr-[67px] pt-[40px] rounded-[52px] top-[426px] w-[452px]">
       <div aria-hidden="true" className="absolute border border-solid border-white inset-0 pointer-events-none rounded-[52px]" />
       <Frame9 />
     </div>
@@ -209,7 +209,7 @@ function Frame11() {
 
 function Group() {
   return (
-    <div className="absolute h-[240px] left-[calc(41.67%+12px)] top-[426px] w-[452px]">
+    <div className="absolute h-[240px] left-[calc(66.67%-6px)] top-[426px] w-[452px]">
       <div className="absolute backdrop-blur-[40px] bg-[rgba(255,255,255,0.32)] border border-solid border-white inset-0 rounded-[52px]" />
       <Frame11 />
     </div>
@@ -231,7 +231,7 @@ function Frame13() {
 
 function Group2() {
   return (
-    <div className="absolute h-[240px] left-[calc(66.67%-6px)] top-[426px] w-[452px]">
+    <div className="absolute h-[240px] left-[calc(41.67%+12px)] top-[176px] w-[452px]">
       <div className="absolute backdrop-blur-[40px] bg-[rgba(255,255,255,0.32)] border border-solid border-white inset-0 rounded-[52px]" />
       <Frame13 />
     </div>

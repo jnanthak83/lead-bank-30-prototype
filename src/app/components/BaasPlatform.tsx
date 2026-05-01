@@ -7,11 +7,12 @@ import Desktop830 from "../../imports/Desktop830/Desktop830";
 import Desktop831 from "../../imports/Desktop831/Desktop831";
 import Desktop832 from "../../imports/Desktop832/Desktop832";
 import Desktop833 from "../../imports/Desktop833/Desktop833";
+import { CapabilitiesIntro } from "./CapabilitiesIntro";
 import { Reveal } from "./Reveal";
 import { SiteFooter } from "./SiteFooter";
 import type { Page } from "../App";
 
-const sections = [Desktop824, Desktop825, Desktop826, Desktop829, Desktop830, Desktop831, Desktop832, Desktop833, Desktop828];
+const sections = [Desktop824, Desktop825, Desktop826, CapabilitiesIntro, Desktop829, Desktop830, Desktop831, Desktop832, Desktop833, Desktop828];
 
 export function BaasPlatform({
   onNavigate,
@@ -22,7 +23,7 @@ export function BaasPlatform({
     <div className="w-full relative">
       {sections.map((Section, i) => (
         <Reveal key={i}>
-          <Section />
+          <Section onNavigate={onNavigate} />
         </Reveal>
       ))}
       <SiteFooter onNavigate={onNavigate} />

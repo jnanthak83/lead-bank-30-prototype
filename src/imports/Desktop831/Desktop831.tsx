@@ -1,67 +1,33 @@
 import svgPaths from "./svg-qbon8vd5v4";
 import imgBaaS from "./3b1cfe2383b730bdf88c4f2642f936d7cf4e9686.png";
 
-function Frame8() {
+function Frame8({ onLearnMore, onLaunchConsole }: { onLearnMore?: () => void; onLaunchConsole?: () => void }) {
   return (
     <div className="content-stretch flex gap-[16px] items-start relative shrink-0">
-      <div className="bg-white content-stretch flex gap-[12px] h-[48px] items-center justify-center px-[32px] py-[12px] relative rounded-[24px] shrink-0" data-name="Button">
+      <button type="button" onClick={onLearnMore} className="bg-white border-0 content-stretch cursor-pointer flex gap-[12px] h-[48px] items-center justify-center px-[32px] py-[12px] relative rounded-[24px] shrink-0" data-name="Button">
         <div className="flex flex-col font-['Lead_Sans_Variable:Medium',sans-serif] font-[493.75] justify-center leading-[0] not-italic relative shrink-0 text-[#2b2c39] text-[14px] whitespace-nowrap" style={{ fontVariationSettings: "'wdth' 100" }}>
-          <p className="leading-[1.2]">Launch Console</p>
+          <p className="leading-[1.2]">Learn more</p>
         </div>
-      </div>
-      <div className="bg-[rgba(255,255,255,0.4)] content-stretch flex gap-[12px] h-[48px] items-center justify-center px-[32px] py-[12px] relative rounded-[24px] shrink-0 w-[167px]" data-name="Button">
+      </button>
+      <button type="button" onClick={onLaunchConsole} className="bg-white border-0 content-stretch cursor-pointer flex gap-[12px] h-[48px] items-center justify-center px-[32px] py-[12px] relative rounded-[24px] shrink-0 w-[167px]" data-name="Button">
         <div className="flex flex-col font-['Lead_Sans_Variable:Medium',sans-serif] font-[493.75] justify-center leading-[0] not-italic relative shrink-0 text-[#2b2c39] text-[14px] whitespace-nowrap" style={{ fontVariationSettings: "'wdth' 100" }}>
-          <p className="leading-[1.2]">Learn More</p>
+          <p className="leading-[1.2]">Launch console</p>
         </div>
-      </div>
+      </button>
     </div>
   );
 }
 
-function Frame5() {
+function Frame5({ onLearnMore, onLaunchConsole }: { onLearnMore?: () => void; onLaunchConsole?: () => void }) {
   return (
     <div className="-translate-y-1/2 absolute content-stretch flex flex-col gap-[52px] items-start left-[calc(8.33%+34px)] top-[calc(50%+0.5px)]">
       <div className="flex flex-col font-['Lead_Sans_Variable:Regular',sans-serif] font-normal justify-end leading-[0] not-italic relative shrink-0 text-[#2b2c39] text-[72px] tracking-[-1.44px] whitespace-nowrap" style={{ fontVariationSettings: "'wdth' 100" }}>
         <p className="leading-[1.1]">Issue</p>
       </div>
-      <p className="font-['Lead_Sans_Variable:Regular',sans-serif] font-normal leading-[1.3] not-italic relative shrink-0 text-[#2b2c39] text-[24px] whitespace-nowrap" style={{ fontVariationSettings: "'wdth' 100" }}>
-        Offer Branded Credit, Debit, or Prepaid Cards
-      </p>
       <p className="font-['Lead_Sans_Variable:Regular',sans-serif] font-normal leading-[1.3] not-italic relative shrink-0 text-[#606171] text-[24px] w-[450px]" style={{ fontVariationSettings: "'wdth' 100" }}>
-        Create physical and virtual credit and debit cards, and generate multiple account numbers custom tailored to your program
+        Create physical and virtual credit and debit cards, and generate multiple account numbers custom tailored to your program.
       </p>
-      <Frame8 />
-    </div>
-  );
-}
-
-function Frame1() {
-  return (
-    <div className="absolute content-stretch flex gap-[8px] items-center left-[calc(8.33%+34px)] top-[200px]">
-      <div className="flex flex-col font-['Lead_Sans_Variable:Medium',sans-serif] font-[493.75] justify-center leading-[0] not-italic relative shrink-0 text-[#606171] text-[14px] whitespace-nowrap" style={{ fontVariationSettings: "'wdth' 100" }}>
-        <p className="leading-[1.2]">Explore Card Issuance</p>
-      </div>
-      <div className="overflow-clip relative shrink-0 size-[16px]" data-name="arrow-right">
-        <div className="absolute inset-[20.83%]" data-name="Icon">
-          <div className="absolute inset-[-5.36%]">
-            <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 10.3333 10.3333">
-              <path d={svgPaths.p1ed54a80} id="Icon" stroke="var(--stroke-0, #606171)" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function Frame7() {
-  return (
-    <div className="absolute content-stretch flex flex-col gap-[7px] items-start left-[40px] top-[847px] w-[22px]">
-      <div className="bg-[#2b2c39] h-px opacity-20 rounded-[10px] shrink-0 w-[12px]" />
-      <div className="bg-[#2b2c39] h-px opacity-20 rounded-[10px] shrink-0 w-[12px]" />
-      <div className="bg-[#2b2c39] h-px rounded-[10px] shrink-0 w-full" />
-      <div className="bg-[#2b2c39] h-px opacity-20 rounded-[10px] shrink-0 w-[12px]" />
-      <div className="bg-[#2b2c39] h-px opacity-20 rounded-[10px] shrink-0 w-[12px]" />
+      <Frame8 onLearnMore={onLearnMore} onLaunchConsole={onLaunchConsole} />
     </div>
   );
 }
@@ -205,16 +171,14 @@ function Button1() {
   );
 }
 
-export default function Desktop() {
+export default function Desktop({ onNavigate }: { onNavigate?: (page: "issue" | "console", section?: string) => void } = {}) {
   return (
     <div className="bg-[#eaeaee] relative size-full" data-name="Desktop - 831">
       <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[1080px] left-1/2 top-1/2 w-[1920px]" data-name="BaaS">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgBaaS} />
       </div>
       <div className="-translate-x-1/2 absolute backdrop-blur-[100px] bg-[rgba(255,255,255,0.52)] border border-solid border-white h-[1060px] left-[calc(20.83%+5.5px)] rounded-[62px] top-[10px] w-[791px]" />
-      <Frame5 />
-      <Frame1 />
-      <Frame7 />
+      <Frame5 onLearnMore={() => onNavigate?.("issue")} onLaunchConsole={() => onNavigate?.("console")} />
       <div className="absolute h-[98px] left-0 top-[982px] w-[1920px]" data-name="Footer">
         <Frame6 />
         <div className="-translate-x-1/2 absolute bg-white bottom-[97px] h-px left-1/2 opacity-20 w-[1840px]" />

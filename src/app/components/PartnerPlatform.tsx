@@ -83,6 +83,7 @@ export function PartnerPlatform({ onNavigate }: { onNavigate?: () => void }) {
         <button
           type="button"
           onClick={onNavigate}
+          data-name="Button"
           className="flex h-[48px] w-fit items-center justify-center gap-[12px] rounded-[24px] bg-white px-[32px] py-[12px] font-['Lead_Sans_Variable:Medium',sans-serif] text-[14px] text-[#2b2c39]"
           style={{ fontVariationSettings: "'wdth' 100" }}
         >

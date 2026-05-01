@@ -4,7 +4,9 @@ import imgDepth7Frame12 from "./d568b164c26b35eebe6a407c03f478bc8049c84b.png";
 import imgImage2 from "./eb6f66a53e762ab965933851eab8c6142c94c530.png";
 import imgImage3 from "./373e160d1dc05abb8bb8a63374d753344687ae94.png";
 import imgImage4 from "./04a851e9fba3126532b04c4bd55e3f3ce2fdfc7c.png";
-import imgImage1 from "./4f844fde30416ce73edc91275c36504b2627626d.png";
+import imgImage1 from "../Desktop267/jackie-reses-color.jpg";
+
+type AboutPage = "baas" | "leadership" | "jackie";
 
 function Frame() {
   return (
@@ -352,7 +354,7 @@ function Frame18() {
   );
 }
 
-function Baas2() {
+function Baas2({ onExplorePartnerPlatform }: { onExplorePartnerPlatform?: () => void }) {
   return (
     <div className="absolute bg-white h-[1024px] left-0 overflow-clip top-0 w-[1440px]" data-name="BAAS_0">
       <div className="absolute h-[335.87px] left-[-14667px] top-[512px] w-[1107.348px]">
@@ -365,17 +367,22 @@ function Baas2() {
       <Frame6 />
       <Group2 />
       <Frame18 />
-      <div className="absolute bg-[#3c4043] content-stretch flex items-center justify-center left-[185px] px-[24px] py-[12px] top-[748px]" data-name="Button">
+      <button
+        className="absolute bg-[#3c4043] border-0 content-stretch cursor-pointer flex items-center justify-center left-[185px] px-[24px] py-[12px] top-[748px] transition-colors duration-200 hover:bg-[#2f3336]"
+        data-name="Button"
+        onClick={onExplorePartnerPlatform}
+        type="button"
+      >
         <div aria-hidden="true" className="absolute border border-[#3c4043] border-solid inset-[-1px] pointer-events-none" />
         <p className="font-['Lead_Sans_Variable:Regular',sans-serif] font-normal leading-[normal] not-italic relative shrink-0 text-[16px] text-white whitespace-nowrap" style={{ fontVariationSettings: "'wdth' 100" }}>
           Explore Our Partner Platform
         </p>
-      </div>
+      </button>
     </div>
   );
 }
 
-function Baas1() {
+function Baas1({ onExplorePartnerPlatform }: { onExplorePartnerPlatform?: () => void }) {
   return (
     <div className="bg-white h-[1024px] overflow-clip relative shrink-0 w-full" data-name="BAAS_0">
       <div className="absolute h-[335.87px] left-[-14667px] top-[512px] w-[1107.348px]">
@@ -386,7 +393,7 @@ function Baas1() {
         </div>
       </div>
       <Frame4 />
-      <Baas2 />
+      <Baas2 onExplorePartnerPlatform={onExplorePartnerPlatform} />
     </div>
   );
 }
@@ -638,14 +645,20 @@ function Depth7Frame3() {
   );
 }
 
-function Depth7Frame5() {
+function Depth7Frame5({ onOpenJackie }: { onOpenJackie?: () => void }) {
   return (
-    <div className="absolute h-[217.546px] left-[183px] overflow-clip rounded-[19.337px] top-[397px] w-[197px]" data-name="Depth 7, Frame 27">
+    <button
+      className="absolute appearance-none bg-transparent border-0 cursor-pointer group h-[217.546px] left-[183px] overflow-clip p-0 rounded-[19.337px] top-[397px] w-[197px]"
+      data-name="Depth 7, Frame 27"
+      onClick={onOpenJackie}
+      type="button"
+    >
       <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[19.337px] size-full" src={imgDepth7Frame12} />
       <div className="absolute left-0 size-[221.172px] top-[-3.02px]" data-name="image 1">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage1} />
       </div>
       <Depth7Frame3 />
+      <div className="absolute bg-white inset-0 opacity-0 pointer-events-none rounded-[19.337px] transition-opacity duration-200 group-hover:opacity-10" />
       <div className="absolute left-[14.5px] size-[19.337px] top-[14.5px]" data-name="Plus">
         <div className="absolute inset-[12.5%]" data-name="Vector">
           <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 14.5031 14.5031">
@@ -653,51 +666,29 @@ function Depth7Frame5() {
           </svg>
         </div>
       </div>
-    </div>
+    </button>
   );
 }
 
-function Frame16() {
+function Button({ onMeetLeadership }: { onMeetLeadership?: () => void }) {
   return (
-    <div className="content-stretch flex flex-col font-['Lead_Sans_Variable:Regular',sans-serif] font-normal gap-[19px] items-start not-italic relative shrink-0 w-full">
-      <div className="flex flex-col justify-center leading-[0] relative shrink-0 text-[80px] text-black w-[751px]" style={{ fontVariationSettings: "'wdth' 100" }}>
-        <p className="leading-[normal]">Let’s Build the Future of Banking Together.</p>
-      </div>
-      <p className="leading-[normal] relative shrink-0 text-[#3c4043] text-[16px] w-[751px]" style={{ fontVariationSettings: "'wdth' 100", fontFeatureSettings: "'calt' 0" }}>
-        Lead Bank was reimagined for the builders shaping what’s next. Our Partner Platform combines a century of banking trust with real fintech experience — giving innovators the foundation to launch, scale, and grow with confidence.
-      </p>
-    </div>
-  );
-}
-
-function Frame17() {
-  return (
-    <div className="absolute content-stretch flex flex-col gap-[40px] items-start left-[185px] top-[1534px] w-[817px]">
-      <Frame16 />
-      <div className="bg-[#3c4043] content-stretch flex items-center justify-center px-[24px] py-[12px] relative shrink-0" data-name="Button">
-        <div aria-hidden="true" className="absolute border border-[#3c4043] border-solid inset-[-1px] pointer-events-none" />
-        <p className="font-['Lead_Sans_Variable:Regular',sans-serif] font-normal leading-[normal] not-italic relative shrink-0 text-[16px] text-white whitespace-nowrap" style={{ fontVariationSettings: "'wdth' 100" }}>
-          Explore the Partner Platform
-        </p>
-      </div>
-    </div>
-  );
-}
-
-function Button() {
-  return (
-    <div className="-translate-x-1/2 absolute bg-black content-stretch flex items-center justify-center left-[calc(50%-438.5px)] px-[24px] py-[12px] rounded-[8px] top-[1314px] w-[197px]" data-name="Button">
+    <button
+      className="absolute bg-black border-0 content-stretch cursor-pointer flex items-center justify-center left-[183px] px-[24px] py-[12px] rounded-[8px] top-[1314px] transition-colors duration-200 w-[197px] hover:bg-[#1f1f1f]"
+      data-name="Button"
+      onClick={onMeetLeadership}
+      type="button"
+    >
       <div aria-hidden="true" className="absolute border border-black border-solid inset-[-1px] pointer-events-none rounded-[9px]" />
       <p className="font-['Lead_Sans_Variable:Regular',sans-serif] font-normal leading-[1.5] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap" style={{ fontVariationSettings: "'wdth' 100" }}>
         Meet the leadership team
       </p>
-    </div>
+    </button>
   );
 }
 
-function Baas3() {
+function Baas3({ onOpenJackie, onMeetLeadership }: { onOpenJackie?: () => void; onMeetLeadership?: () => void }) {
   return (
-    <div className="bg-white h-[2084px] overflow-clip relative shrink-0 w-full" data-name="BAAS_0">
+    <div className="bg-white h-[1460px] overflow-clip relative shrink-0 w-full" data-name="BAAS_0">
       <div className="absolute h-[335.87px] left-[-14667px] top-[512px] w-[1107.348px]">
         <div className="absolute inset-[-0.45%_-0.14%]">
           <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 1110.35 338.871">
@@ -710,20 +701,19 @@ function Baas3() {
       <Depth7Frame4 />
       <Depth7Frame7 />
       <Depth7Frame6 />
-      <Depth7Frame5 />
-      <Frame17 />
-      <Button />
+      <Depth7Frame5 onOpenJackie={onOpenJackie} />
+      <Button onMeetLeadership={onMeetLeadership} />
     </div>
   );
 }
 
-export default function AboutUs() {
+export default function AboutUs({ onNavigate }: { onNavigate?: (page: AboutPage) => void } = {}) {
   return (
     <div className="content-stretch flex flex-col items-start relative size-full" data-name="About Us">
       <OurStory />
       <Baas />
-      <Baas1 />
-      <Baas3 />
+      <Baas1 onExplorePartnerPlatform={() => onNavigate?.("baas")} />
+      <Baas3 onMeetLeadership={() => onNavigate?.("leadership")} onOpenJackie={() => onNavigate?.("jackie")} />
     </div>
   );
 }

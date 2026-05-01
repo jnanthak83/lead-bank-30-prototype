@@ -11,7 +11,7 @@ export function LeadershipTeam({
   return (
     <div className="w-full bg-white">
       <Reveal baseWidth={1440} baseHeight={5484}>
-        <Desktop267 />
+        <Desktop267 onNavigate={(p) => onNavigate?.(p)} />
       </Reveal>
       <SiteFooter onNavigate={onNavigate} />
     </div>

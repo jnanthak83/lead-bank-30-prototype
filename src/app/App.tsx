@@ -21,6 +21,7 @@ import { Blog } from "./components/Blog";
 import { StubPage } from "./components/StubPage";
 import { PartnerPlatform } from "./components/PartnerPlatform";
 import { EverydayBanking } from "./components/EverydayBanking";
+import { JackieProfile } from "./components/JackieProfile";
 
 const LEND_ITEMS = [
   { id: "embedded-credit", title: "Embedded credit" },
@@ -69,6 +70,7 @@ export type Page =
   | "store"
   | "about"
   | "leadership"
+  | "jackie"
   | "blog"
   | "uc-lending"
   | "uc-digital-banking"
@@ -112,6 +114,7 @@ export default function App() {
   const [page, setPage] = useState<Page>("home");
   const [section, setSection] = useState<string | undefined>(undefined);
   const stubPage = STUB_PAGES[page];
+  const isCapabilityPage = page === "move" || page === "lend" || page === "issue" || page === "store";
 
   const goUseCase = (uc: "digital-banking" | "consumer-payments" | "crypto") => {
     const map: Record<string, Page> = {
@@ -132,6 +135,7 @@ export default function App() {
   return (
     <div
       className="w-full min-h-screen overflow-x-hidden relative"
+      data-current-page={page}
       style={{ backgroundColor: page === "home" ? "transparent" : "#eaeaee" }}
     >
       <style>{`
@@ -140,8 +144,35 @@ export default function App() {
         [data-name="Footer"].absolute { display: none !important; }
         .dark-section-wrap > [data-name] { background-color: transparent !important; }
         .absolute.top-\\[855px\\].w-\\[22px\\] { display: none !important; }
+        [data-name^="Desktop -"] > .absolute.content-stretch.flex.flex-col.gap-\\[7px\\].items-start.w-\\[22px\\] { display: none !important; }
         [data-name^="Desktop -"].rounded-\\[20px\\] { border-radius: 0 !important; }
         [data-name="btn"]:has([data-name="Icon=arrow_long_right"]) { display: none !important; }
+        [data-current-page="baas"] [data-name="Button"],
+        [data-current-page="move"] [data-name="Button"],
+        [data-current-page="lend"] [data-name="Button"],
+        [data-current-page="issue"] [data-name="Button"],
+        [data-current-page="store"] [data-name="Button"],
+        [data-current-page="personal"] [data-name="Button"],
+        [data-current-page="business"] [data-name="Button"],
+        [data-current-page="about"] [data-name="Button"],
+        [data-current-page="leadership"] [data-name="Button"],
+        [data-current-page="blog"] [data-name="Button"],
+        [data-current-page="careers"] [data-name="Button"] {
+          transition: filter 180ms ease, background-color 180ms ease, opacity 180ms ease;
+        }
+        [data-current-page="baas"] [data-name="Button"]:hover,
+        [data-current-page="move"] [data-name="Button"]:hover,
+        [data-current-page="lend"] [data-name="Button"]:hover,
+        [data-current-page="issue"] [data-name="Button"]:hover,
+        [data-current-page="store"] [data-name="Button"]:hover,
+        [data-current-page="personal"] [data-name="Button"]:hover,
+        [data-current-page="business"] [data-name="Button"]:hover,
+        [data-current-page="about"] [data-name="Button"]:hover,
+        [data-current-page="leadership"] [data-name="Button"]:hover,
+        [data-current-page="blog"] [data-name="Button"]:hover,
+        [data-current-page="careers"] [data-name="Button"]:hover {
+          filter: brightness(0.92);
+        }
       `}</style>
 
       {page === "home" && (
@@ -184,6 +215,7 @@ export default function App() {
         </div>
       ) : page === "personal" ? (
         <PersonalBanking
+          section={section}
           onNavigate={(p, s) => {
             setPage(p);
             setSection(s);
@@ -191,6 +223,7 @@ export default function App() {
         />
       ) : page === "business" ? (
         <BusinessBanking
+          section={section}
           onNavigate={(p, s) => {
             setPage(p);
             setSection(s);
@@ -281,7 +314,12 @@ export default function App() {
         </>
       ) : page === "about" ? (
         <div className="w-full bg-white">
-          <AboutUs />
+          <AboutUs
+            onNavigate={(p) => {
+              setPage(p);
+              setSection(undefined);
+            }}
+          />
           <SiteFooter
             onNavigate={(p, s) => {
               setPage(p);
@@ -296,6 +334,16 @@ export default function App() {
             setSection(s);
           }}
         />
+      ) : page === "jackie" ? (
+        <>
+          <JackieProfile />
+          <SiteFooter
+            onNavigate={(p, s) => {
+              setPage(p);
+              setSection(s);
+            }}
+          />
+        </>
       ) : page === "blog" ? (
         <Blog
           onNavigate={(p, s) => {
@@ -333,12 +381,12 @@ export default function App() {
         />
       )}
 
-      {!stubPage && page !== "about" && page !== "leadership" && page !== "blog" && <ScrollIndicator
+      {!stubPage && !isCapabilityPage && page !== "about" && page !== "leadership" && page !== "jackie" && page !== "blog" && <ScrollIndicator
         total={
           page === "home"
             ? sections.length
             : page === "baas"
-            ? 10
+            ? 11
             : page === "move"
             ? 6
             : page === "lend"
@@ -374,6 +422,8 @@ export default function App() {
             ? "Company"
             : page === "leadership"
             ? "Leadership"
+            : page === "jackie"
+            ? "Jackie Reses"
             : page === "blog"
             ? "Blog"
             : USE_CASE_LABELS[page]
@@ -386,7 +436,7 @@ export default function App() {
           page === "home"
             ? sections.length
             : page === "baas"
-            ? 10
+            ? 11
             : page === "move"
             ? 6
             : page === "lend"
@@ -398,6 +448,8 @@ export default function App() {
             : page === "about"
             ? 1
             : page === "leadership"
+            ? 1
+            : page === "jackie"
             ? 1
             : page === "blog"
             ? 1

@@ -5,7 +5,7 @@ import imgDepth7Frame12 from "./d568b164c26b35eebe6a407c03f478bc8049c84b.png";
 import imgImage2 from "./eb6f66a53e762ab965933851eab8c6142c94c530.png";
 import imgImage3 from "./373e160d1dc05abb8bb8a63374d753344687ae94.png";
 import imgImage4 from "./04a851e9fba3126532b04c4bd55e3f3ce2fdfc7c.png";
-import imgImage1 from "./4f844fde30416ce73edc91275c36504b2627626d.png";
+import imgImage1 from "./jackie-reses-color.jpg";
 
 function Group() {
   return (
@@ -1161,14 +1161,20 @@ function Depth7Frame8() {
   );
 }
 
-function Depth7Frame15() {
+function Depth7Frame15({ onOpenJackie }: { onOpenJackie?: () => void }) {
   return (
-    <div className="col-1 justify-self-stretch overflow-clip relative rounded-[32px] row-1 self-stretch shrink-0" data-name="Depth 7, Frame 27">
+    <button
+      type="button"
+      onClick={onOpenJackie}
+      className="appearance-none bg-transparent border-0 col-1 cursor-pointer justify-self-stretch overflow-clip p-0 relative rounded-[32px] row-1 self-stretch shrink-0 text-left group"
+      data-name="Depth 7, Frame 27"
+    >
       <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[32px] size-full" src={imgDepth7Frame12} />
       <div className="absolute left-0 size-[573px] top-[-5px]" data-name="image 1">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage1} />
       </div>
       <div className="absolute h-[425px] left-[32px] rounded-[30px] top-[16px] w-[509px]" data-name="Placeholder Image" />
+      <div className="absolute inset-0 rounded-[32px] bg-white opacity-0 transition-opacity duration-200 group-hover:opacity-10" />
       <Depth7Frame8 />
       <div className="absolute left-[24px] size-[32px] top-[24px]" data-name="Plus">
         <div className="absolute inset-[12.5%]" data-name="Vector">
@@ -1177,11 +1183,11 @@ function Depth7Frame15() {
           </svg>
         </div>
       </div>
-    </div>
+    </button>
   );
 }
 
-function Frame57() {
+function Frame57({ onOpenJackie }: { onOpenJackie?: () => void }) {
   return (
     <div className="absolute gap-x-[20px] gap-y-[16px] grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[repeat(4,minmax(0,1fr))] h-[2128px] left-[137px] top-[1627px] w-[1166px]">
       <Depth7Frame12 />
@@ -1191,7 +1197,7 @@ function Frame57() {
       <Depth7Frame19 />
       <Depth7Frame18 />
       <Depth7Frame20 />
-      <Depth7Frame15 />
+      <Depth7Frame15 onOpenJackie={onOpenJackie} />
     </div>
   );
 }
@@ -1734,7 +1740,7 @@ function Frame59() {
   );
 }
 
-export default function Desktop() {
+export default function Desktop({ onNavigate }: { onNavigate?: (page: "jackie") => void } = {}) {
   return (
     <div className="bg-[#f0f0f0] overflow-clip relative rounded-[24px] size-full" data-name="Desktop - 267">
       <div className="absolute h-[206.15px] left-[1737.9px] top-[444.9px] w-0">
@@ -1754,7 +1760,7 @@ export default function Desktop() {
         <Frame42 />
         <Frame39 />
       </div>
-      <Frame57 />
+      <Frame57 onOpenJackie={() => onNavigate?.("jackie")} />
       <Layout />
       <div className="-translate-y-full absolute flex flex-col font-['Lead_Sans_Variable:Regular',sans-serif] font-normal h-[52px] justify-end leading-[0] left-[137px] not-italic text-[40px] text-black top-[1567px] w-[1168px]" style={{ fontVariationSettings: "'wdth' 100" }}>
         <p className="leading-[normal]">Our Team</p>

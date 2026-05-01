@@ -24,6 +24,7 @@ type Page =
   | "store"
   | "about"
   | "leadership"
+  | "jackie"
   | "blog"
   | "uc-lending"
   | "uc-digital-banking"
@@ -372,24 +373,35 @@ function BankingPanel({
   onNavigate,
   dark,
 }: {
-  onNavigate?: (page: Page) => void;
+  onNavigate?: (page: Page, section?: string) => void;
   dark?: boolean;
 }) {
+  const businessSections: Record<string, string> = {
+    "Checking": "business-checking",
+    "Savings": "business-savings",
+    "Loans": "business-loans",
+  };
+  const personalSections: Record<string, string> = {
+    "Checking": "personal-checking",
+    "Savings": "personal-savings",
+    "Investment Savings": "personal-investment-savings",
+  };
+
   return (
     <div className="flex gap-[80px] px-[60px] py-[48px]">
       <Column
         dark={dark}
         title="BUSINESS"
-        items={["Business checking", "Money market", "Certificates of deposit"]}
+        items={["Checking", "Savings", "Loans"]}
         onTitleClick={() => onNavigate?.("business")}
-        onItemClick={() => onNavigate?.("business")}
+        onItemClick={(item) => onNavigate?.("business", businessSections[item] ?? "business-overview")}
       />
       <Column
         dark={dark}
         title="PERSONAL"
-        items={["Personal checking", "Savings", "Certificates of deposit"]}
+        items={["Checking", "Savings", "Investment Savings"]}
         onTitleClick={() => onNavigate?.("personal")}
-        onItemClick={() => onNavigate?.("personal")}
+        onItemClick={(item) => onNavigate?.("personal", personalSections[item] ?? "personal-overview")}
       />
     </div>
   );
@@ -454,8 +466,8 @@ export function Nav({
       return (
         <BankingPanel
           dark={dark}
-          onNavigate={(p) => {
-            onNavigate?.(p);
+          onNavigate={(p, s) => {
+            onNavigate?.(p, s);
             setOpen(null);
           }}
         />
@@ -503,7 +515,9 @@ export function Nav({
               const isOpen = open === l.key;
               const isActive =
                 (l.key === "banking" && (page === "personal" || page === "business")) ||
-                (l.key === "baas" && page === "baas");
+                (l.key === "baas" && page === "baas") ||
+                (l.key === "about" &&
+                  (page === "about" || page === "leadership" || page === "jackie" || page === "careers" || page === "blog"));
               return (
                 <div
                   key={l.key}
@@ -532,7 +546,7 @@ export function Nav({
             <button
               type="button"
               onClick={() => onNavigate?.("console")}
-              className="h-[40px] px-[20px] rounded-[24px] text-[13px] font-['Lead_Sans_Variable:Medium',sans-serif] border"
+              className="h-[40px] px-[20px] rounded-[24px] text-[13px] font-['Lead_Sans_Variable:Medium',sans-serif] border transition-[filter] hover:brightness-[0.92]"
               style={{
                 fontVariationSettings: "'wdth' 100",
                 background: dark ? "rgba(255,255,255,0.08)" : "#ffffff",
@@ -545,7 +559,7 @@ export function Nav({
             <button
               type="button"
               onClick={() => onNavigate?.("login")}
-              className="h-[40px] px-[28px] rounded-[24px] text-white text-[13px] font-['Lead_Sans_Variable:Medium',sans-serif] bg-[#0040ff] shadow-[0px_6px_12px_rgba(0,144,255,0.24)]"
+              className="h-[40px] px-[28px] rounded-[24px] text-white text-[13px] font-['Lead_Sans_Variable:Medium',sans-serif] bg-[#0040ff] shadow-[0px_6px_12px_rgba(0,144,255,0.24)] transition-[filter] hover:brightness-[0.92]"
               style={{ fontVariationSettings: "'wdth' 100" }}
             >
               Login

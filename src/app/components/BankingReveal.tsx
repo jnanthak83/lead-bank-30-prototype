@@ -2,7 +2,8 @@ import { motion } from "motion/react";
 import { useEffect, useRef, useState, type ComponentType } from "react";
 
 type BankingRevealProps = {
-  Section: ComponentType;
+  Section: ComponentType<any>;
+  sectionProps?: Record<string, unknown>;
   backgroundName: "Personal Banking" | "Business Banking";
   baseWidth?: number;
   baseHeight?: number;
@@ -10,6 +11,7 @@ type BankingRevealProps = {
 
 export function BankingReveal({
   Section,
+  sectionProps = {},
   backgroundName,
   baseWidth = 1920,
   baseHeight = 1080,
@@ -51,7 +53,7 @@ export function BankingReveal({
             transformOrigin: "top left",
           }}
         >
-          <Section />
+          <Section {...sectionProps} />
         </div>
       </div>
       <motion.div
@@ -67,7 +69,7 @@ export function BankingReveal({
         viewport={{ once: true, amount: 0.15 }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
       >
-        <Section />
+        <Section {...sectionProps} />
       </motion.div>
     </div>
   );

@@ -5,7 +5,7 @@ import type { Page } from "../App";
 
 type NavTarget = { page: Page; section?: string };
 
-type Item = { label: string; target: NavTarget; items?: Item[] };
+type Item = { label: string; target?: NavTarget; href?: string; items?: Item[] };
 type Group = { title: string; items: Item[] };
 type LegalItem = { label: string; target?: NavTarget };
 
@@ -103,7 +103,7 @@ const NAV_COLUMNS: Group[] = [
     items: [
       { label: "About", target: { page: "about" } },
       { label: "Careers at Lead", target: { page: "careers" } },
-      { label: "Job board", target: { page: "job-board" } },
+      { label: "Job board", href: "https://www.lead.bank/explore-lead" },
       { label: "Leadership team", target: { page: "leadership" } },
       { label: "Blog", target: { page: "blog" } },
     ],
@@ -174,15 +174,23 @@ function FooterItem({
   item: Item;
   onNavigate: (target: NavTarget) => void;
 }) {
+  const handle = (entry: Item) => {
+    if (entry.href) {
+      window.location.href = entry.href;
+      return;
+    }
+    if (entry.target) onNavigate(entry.target);
+  };
+
   return (
     <div className="flex flex-col gap-[7px]">
-      <FooterLink label={item.label} onClick={() => onNavigate(item.target)} />
+      <FooterLink label={item.label} onClick={() => handle(item)} />
       {item.items?.map((sub) => (
         <FooterLink
           key={`${item.label}-${sub.label}`}
           label={sub.label}
           level={1}
-          onClick={() => onNavigate(sub.target)}
+          onClick={() => handle(sub)}
         />
       ))}
     </div>

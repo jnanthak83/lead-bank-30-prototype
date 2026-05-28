@@ -28,6 +28,18 @@ Open the local URL Vite prints in the terminal. By default it is:
 http://localhost:5173/
 ```
 
+The first screen lets you choose between two prototype narratives:
+
+- `Lead Bank`: broader traditional banking narrative with BaaS as one offering.
+- `Lead Bank BaaS Focus`: BaaS-first narrative with its own home page and navigation.
+
+Direct local preview links:
+
+```text
+http://localhost:5173/#leadbank
+http://localhost:5173/#baas
+```
+
 ## Available Commands
 
 ```bash
@@ -57,9 +69,12 @@ src/
 
 Other useful files:
 
+- `CLAUDE.md` gives Claude Code project-specific instructions for editing this prototype.
 - `netlify.toml` controls Netlify build settings and SPA redirects.
 - `src/styles/fonts.css` registers the Lead Sans font.
 - `src/app/components/Nav.tsx` controls the top navigation and popovers.
+- `src/app/components/BaasNav.tsx` controls the BaaS-focused top navigation and popovers.
+- `src/app/components/BaasHome.tsx` controls the BaaS-focused home page.
 - `src/app/components/SiteFooter.tsx` controls the footer columns and links.
 
 ## How Navigation Works

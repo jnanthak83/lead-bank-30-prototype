@@ -23,6 +23,9 @@ import { PartnerPlatform } from "./components/PartnerPlatform";
 import { EverydayBanking } from "./components/EverydayBanking";
 import { JackieProfile } from "./components/JackieProfile";
 import { ContactPage } from "./components/ContactPage";
+import { BaasHome, BAAS_HOME_SECTION_TOTAL } from "./components/BaasHome";
+import { BaasNav } from "./components/BaasNav";
+import { SiteChooser } from "./components/SiteChooser";
 
 const LEND_ITEMS = [
   { id: "embedded-credit", title: "Embedded credit" },
@@ -81,6 +84,15 @@ export type Page =
   | "uc-crypto"
   | "uc-credit-builder";
 
+export type SiteVariant = "leadbank" | "baas";
+
+const getInitialSiteVariant = (): SiteVariant | null => {
+  if (typeof window === "undefined") return null;
+  const hash = window.location.hash.replace("#", "");
+  if (hash === "leadbank" || hash === "baas") return hash;
+  return null;
+};
+
 const USE_CASE_PAGES: Record<string, UseCaseKey> = {
   "uc-digital-banking": "digital-banking",
   "uc-business-finances": "business-finances",
@@ -113,10 +125,27 @@ const STUB_PAGES: Partial<Record<Page, { title: string; eyebrow: string }>> = {
 };
 
 export default function App() {
+  const [siteVariant, setSiteVariant] = useState<SiteVariant | null>(getInitialSiteVariant);
   const [page, setPage] = useState<Page>("home");
   const [section, setSection] = useState<string | undefined>(undefined);
   const stubPage = STUB_PAGES[page];
   const isCapabilityPage = page === "move" || page === "lend" || page === "issue" || page === "store";
+  const SiteNav = siteVariant === "baas" ? BaasNav : Nav;
+
+  const selectSite = (variant: SiteVariant) => {
+    setSiteVariant(variant);
+    setPage("home");
+    setSection(undefined);
+    window.history.replaceState(null, "", `#${variant}`);
+  };
+
+  const returnToChooser = () => {
+    setSiteVariant(null);
+    setPage("home");
+    setSection(undefined);
+    window.history.replaceState(null, "", window.location.pathname + window.location.search);
+    window.scrollTo({ top: 0 });
+  };
 
   const goUseCase = (uc: "digital-banking" | "consumer-payments" | "crypto") => {
     const map: Record<string, Page> = {
@@ -134,11 +163,24 @@ export default function App() {
     }
   }, [page, section]);
 
+  useEffect(() => {
+    const syncSiteFromHash = () => {
+      const next = getInitialSiteVariant();
+      setSiteVariant(next);
+      setPage("home");
+      setSection(undefined);
+    };
+
+    window.addEventListener("hashchange", syncSiteFromHash);
+    return () => window.removeEventListener("hashchange", syncSiteFromHash);
+  }, []);
+
   return (
     <div
       className="w-full min-h-screen overflow-x-hidden relative"
       data-current-page={page}
-      style={{ backgroundColor: page === "home" ? "transparent" : "#eaeaee" }}
+      data-site-variant={siteVariant ?? "selector"}
+      style={{ backgroundColor: siteVariant && page === "home" ? "transparent" : "#eaeaee" }}
     >
       <style>{`
         [data-name="MENU"] { display: none !important; }
@@ -160,22 +202,46 @@ export default function App() {
         }
       `}</style>
 
-      {page === "home" && (
+      {!siteVariant ? (
+        <SiteChooser onSelect={selectSite} />
+      ) : siteVariant && page === "home" && (
         <div className="fixed inset-0 -z-10 pointer-events-none">
           <img src={imgHomeA} alt="" className="absolute inset-0 w-full h-full object-cover" />
           <img src={imgHomeB} alt="" className="absolute inset-0 w-full h-full object-cover" />
         </div>
       )}
 
-      <Nav
-        page={page}
-        onNavigate={(newPage, newSection) => {
-          setPage(newPage);
-          setSection(newSection);
-        }}
-      />
+      {siteVariant && (
+        <SiteNav
+          page={page}
+          onNavigate={(newPage, newSection) => {
+            setPage(newPage);
+            setSection(newSection);
+          }}
+        />
+      )}
 
-      {page === "home" ? (
+      {siteVariant && (
+        <button
+          type="button"
+          onClick={returnToChooser}
+          className="site-cta-button fixed bottom-[18px] right-[18px] z-[80] rounded-full border border-white/70 bg-white/65 px-[14px] py-[9px] font-['Lead_Sans_Variable:Medium',sans-serif] text-[12px] text-[#2b2c39] shadow-[0_10px_28px_rgba(43,44,57,0.14)] backdrop-blur-[24px]"
+          style={{ fontVariationSettings: "'wdth' 100" }}
+          aria-label="Back to site chooser"
+        >
+          Switch site
+        </button>
+      )}
+
+      {!siteVariant ? null : page === "home" ? (
+        siteVariant === "baas" ? (
+          <BaasHome
+            onNavigate={(p, s) => {
+              setPage(p);
+              setSection(s);
+            }}
+          />
+        ) : (
         <div className="w-full relative">
           {sections.map((Section, i) => (
             <Reveal key={i}>
@@ -216,6 +282,7 @@ export default function App() {
             }}
           />
         </div>
+        )
       ) : page === "personal" ? (
         <PersonalBanking
           section={section}
@@ -391,10 +458,12 @@ export default function App() {
         />
       )}
 
-      {!stubPage && !isCapabilityPage && page !== "about" && page !== "leadership" && page !== "jackie" && page !== "blog" && page !== "contact" && <ScrollIndicator
+      {siteVariant && !stubPage && !isCapabilityPage && page !== "about" && page !== "leadership" && page !== "jackie" && page !== "blog" && page !== "contact" && <ScrollIndicator
         total={
           page === "home"
-            ? sections.length
+            ? siteVariant === "baas"
+              ? BAAS_HOME_SECTION_TOTAL
+              : sections.length
             : page === "baas"
             ? 11
             : page === "move"
@@ -412,7 +481,7 @@ export default function App() {
         theme={page === "home" || page === "baas" ? "dark" : "light"}
       />}
 
-      <ScrollFooter
+      {siteVariant && <ScrollFooter
         label={
           page === "home"
             ? "Lead Bank"
@@ -446,7 +515,9 @@ export default function App() {
         }
         total={
           page === "home"
-            ? sections.length
+            ? siteVariant === "baas"
+              ? BAAS_HOME_SECTION_TOTAL
+              : sections.length
             : page === "baas"
             ? 11
             : page === "move"
@@ -474,7 +545,7 @@ export default function App() {
             : 5
         }
         theme={page === "home" || page === "baas" ? "dark" : "light"}
-      />
+      />}
     </div>
   );
 }

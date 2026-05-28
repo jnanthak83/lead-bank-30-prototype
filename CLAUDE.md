@@ -4,12 +4,9 @@ Guidance for Claude Code and other AI coding assistants working on this Lead Ban
 
 ## Project Overview
 
-This is a React, TypeScript, Vite, Tailwind CSS prototype for Lead Bank.
+This is a React, TypeScript, Vite, Tailwind CSS prototype for the Lead Bank BaaS-focused marketing site.
 
-The app is intentionally a single-page prototype with state-based routing in `src/app/App.tsx`. It currently supports two site narratives from a chooser screen:
-
-- `Lead Bank`: broader Lead Bank narrative, with traditional banking plus BaaS as one offering.
-- `Lead Bank BaaS Focus`: BaaS-first narrative, with separate home page and navigation.
+The app is intentionally a single-page prototype with state-based routing in `src/app/App.tsx`. It opens directly into the BaaS-focused landing page and navigation.
 
 The live prototype is deployed on Netlify:
 
@@ -33,21 +30,12 @@ Vite usually serves locally at:
 http://localhost:5173/
 ```
 
-Direct variant links:
-
-```text
-http://localhost:5173/#leadbank
-http://localhost:5173/#baas
-```
-
 ## Important Files
 
-- `src/app/App.tsx`: top-level app state, page selection, variant selection, conditional rendering.
-- `src/app/components/SiteChooser.tsx`: first screen that lets users choose the narrative.
-- `src/app/components/Nav.tsx`: main Lead Bank navigation.
-- `src/app/components/BaasNav.tsx`: BaaS-focused navigation. Developers, Banking, and Company should visually match `Nav.tsx`; Products and Use Cases may use BaaS-specific content.
-- `src/app/components/BaasHome.tsx`: BaaS-focused home page section order and custom sections.
-- `src/app/components/BaasHeroRotating.tsx`: BaaS-focused rotating hero copy.
+- `src/app/App.tsx`: top-level app state, page selection, and conditional rendering.
+- `src/app/components/BaasNav.tsx`: top navigation and popovers.
+- `src/app/components/BaasHome.tsx`: home page section order and custom sections.
+- `src/app/components/BaasHeroRotating.tsx`: rotating hero copy.
 - `src/app/components/SiteFooter.tsx`: shared footer.
 - `src/imports/`: Figma-exported sections and images. These files are large and often absolute-positioned.
 - `src/styles/fonts.css`: Lead Sans font declaration.
@@ -64,7 +52,7 @@ When adding or changing pages:
 3. Add links in `Nav.tsx`, `BaasNav.tsx`, or `SiteFooter.tsx` as needed.
 4. For in-page anchors/sections, pass `section` state and make the target component scroll to the correct element.
 
-Do not assume URL paths like `/about` work. This prototype uses hash only for the site variant chooser (`#leadbank` and `#baas`).
+Do not assume URL paths like `/about` work. Navigation is currently handled through React state.
 
 ## Editing Guidance
 
@@ -72,18 +60,15 @@ Do not assume URL paths like `/about` work. This prototype uses hash only for th
 - Many Figma exports include their own nav/footer/menu elements. Global CSS in `App.tsx` intentionally hides those so the shared app chrome is consistent.
 - Keep `dist/`, `node_modules/`, `.netlify/`, and environment files out of git.
 - Preserve Lead Sans usage and existing `fontVariationSettings` patterns.
-- Keep the two variants separate:
-  - Main site uses `Nav`, `HeroRotating`, and the `sections` array in `App.tsx`.
-  - BaaS-focused site uses `BaasNav`, `BaasHome`, and `BaasHeroRotating`.
-- The `Switch site` button in `App.tsx` intentionally returns users to the chooser.
+- Treat the BaaS-focused site as the single active experience. Do not reintroduce a chooser or parallel home page unless explicitly requested.
+- The active home page uses `BaasNav`, `BaasHome`, and `BaasHeroRotating`.
 - The app is a stakeholder prototype, so links may route to intentional stub pages instead of fully implemented pages.
 
 ## Visual/Interaction Expectations
 
 - Buttons use the shared `.site-cta-button` hover treatment from `App.tsx`.
-- Navigation dropdowns should feel consistent between the main and BaaS variants.
-- BaaS Products and Use Cases menus have different content from the main site by design.
-- Developers, Banking, and Company dropdowns on BaaS should stay visually aligned with the main nav.
+- Navigation dropdowns should feel consistent across Products, Use Cases, Developers, Banking, and Company.
+- Products and Use Cases menus use BaaS-specific content by design.
 - Avoid adding explanatory in-app text unless the user explicitly asks for it.
 
 ## Validation

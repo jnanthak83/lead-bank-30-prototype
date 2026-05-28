@@ -1,16 +1,9 @@
 import { useEffect, useState } from "react";
-import Desktop807 from "../imports/Desktop807/Desktop807";
-import { HeroRotating } from "./components/HeroRotating";
-import Desktop778 from "../imports/Desktop778/Desktop778";
+import { useLenis } from "./hooks/useLenis";
 import { SiteFooter } from "./components/SiteFooter";
-import imgHomeA from "../imports/Desktop772/00b7a85efd5530ed04836de8cb6b3380a5f23726.png";
-import imgHomeB from "../imports/Desktop772/2e0d7621d24b5cac2ad309914b257bd34a82cccf.png";
-import { Reveal } from "./components/Reveal";
-import { Nav } from "./components/Nav";
 import { PersonalBanking } from "./components/PersonalBanking";
 import { BusinessBanking } from "./components/BusinessBanking";
 import { BaasPlatform } from "./components/BaasPlatform";
-import { MovePlatform } from "./components/MovePlatform";
 import { RenamedPlatform } from "./components/RenamedPlatform";
 import AboutUs from "../imports/AboutUs/AboutUs";
 import { ScrollFooter } from "./components/ScrollFooter";
@@ -19,38 +12,47 @@ import { UseCasePage, type UseCaseKey } from "./components/UseCasePage";
 import { LeadershipTeam } from "./components/LeadershipTeam";
 import { Blog } from "./components/Blog";
 import { StubPage } from "./components/StubPage";
-import { PartnerPlatform } from "./components/PartnerPlatform";
-import { EverydayBanking } from "./components/EverydayBanking";
 import { JackieProfile } from "./components/JackieProfile";
 import { ContactPage } from "./components/ContactPage";
 import { BaasHome, BAAS_HOME_SECTION_TOTAL } from "./components/BaasHome";
 import { BaasNav } from "./components/BaasNav";
-import { SiteChooser } from "./components/SiteChooser";
 
+const MOVE_ITEMS = [
+  { id: "ach", title: "ACH Payments" },
+  { id: "wires", title: "Wires" },
+  { id: "instant-payments", title: "Instant Payments" },
+  { id: "internal-transfers", title: "Internal Transfers" },
+  { id: "checks", title: "Checks" },
+  { id: "international", title: "International" },
+  { id: "stablecoin", title: "Stablecoin Transfers" },
+  { id: "payment-controls", title: "Payment Controls" },
+];
 const LEND_ITEMS = [
-  { id: "embedded-credit", title: "Embedded credit" },
-  { id: "bnpl", title: "BNPL" },
-  { id: "lines-of-credit", title: "Lines of credit" },
+  { id: "term-loans", title: "Term Loans" },
+  { id: "lines-of-credit", title: "Lines of Credit" },
 ];
 const ISSUE_ITEMS = [
-  { id: "physical-virtual-cards", title: "Physical & virtual cards" },
-  { id: "custom-account-numbers", title: "Custom account numbers" },
+  { id: "credit-cards", title: "Credit Cards" },
+  { id: "debit-cards", title: "Debit Cards" },
+  { id: "prepaid-cards", title: "Prepaid Cards" },
 ];
 const STORE_ITEMS = [
-  { id: "multi-currency-balances", title: "Multi-currency balances" },
-  { id: "fdic-insured-accounts", title: "FDIC-insured accounts" },
+  { id: "customer-balances", title: "Customer Balances" },
+  { id: "account-structures", title: "Account Structures" },
+  { id: "fdic-pass-through-insurance", title: "FDIC Pass-Through Insurance" },
+  { id: "account-numbers", title: "Account Numbers" },
+  { id: "fbo-accounts", title: "FBO Accounts" },
 ];
+const DIGITAL_ASSETS_ITEMS = [
+  { id: "stablecoins", title: "Stablecoins" },
+  { id: "fiat-stablecoin-conversion", title: "Fiat & Stablecoin Conversion" },
+  { id: "on-off-ramp", title: "On/Off Ramp" },
+];
+const MOVE_TOTAL = MOVE_ITEMS.length + 2;
 const LEND_TOTAL = LEND_ITEMS.length + 2;
 const ISSUE_TOTAL = ISSUE_ITEMS.length + 2;
 const STORE_TOTAL = STORE_ITEMS.length + 2;
-
-const sections = [
-  HeroRotating,
-  Desktop807,
-  PartnerPlatform,
-  EverydayBanking,
-  Desktop778,
-];
+const DIGITAL_ASSETS_TOTAL = DIGITAL_ASSETS_ITEMS.length + 2;
 
 export type Page =
   | "home"
@@ -73,6 +75,7 @@ export type Page =
   | "lend"
   | "issue"
   | "store"
+  | "digital-assets"
   | "about"
   | "leadership"
   | "jackie"
@@ -83,15 +86,6 @@ export type Page =
   | "uc-consumer-payments"
   | "uc-crypto"
   | "uc-credit-builder";
-
-export type SiteVariant = "leadbank" | "baas";
-
-const getInitialSiteVariant = (): SiteVariant | null => {
-  if (typeof window === "undefined") return null;
-  const hash = window.location.hash.replace("#", "");
-  if (hash === "leadbank" || hash === "baas") return hash;
-  return null;
-};
 
 const USE_CASE_PAGES: Record<string, UseCaseKey> = {
   "uc-digital-banking": "digital-banking",
@@ -125,27 +119,15 @@ const STUB_PAGES: Partial<Record<Page, { title: string; eyebrow: string }>> = {
 };
 
 export default function App() {
-  const [siteVariant, setSiteVariant] = useState<SiteVariant | null>(getInitialSiteVariant);
   const [page, setPage] = useState<Page>("home");
   const [section, setSection] = useState<string | undefined>(undefined);
   const stubPage = STUB_PAGES[page];
-  const isCapabilityPage = page === "move" || page === "lend" || page === "issue" || page === "store";
-  const SiteNav = siteVariant === "baas" ? BaasNav : Nav;
-
-  const selectSite = (variant: SiteVariant) => {
-    setSiteVariant(variant);
-    setPage("home");
-    setSection(undefined);
-    window.history.replaceState(null, "", `#${variant}`);
-  };
-
-  const returnToChooser = () => {
-    setSiteVariant(null);
-    setPage("home");
-    setSection(undefined);
-    window.history.replaceState(null, "", window.location.pathname + window.location.search);
-    window.scrollTo({ top: 0 });
-  };
+  const isCapabilityPage =
+    page === "move" ||
+    page === "lend" ||
+    page === "issue" ||
+    page === "store" ||
+    page === "digital-assets";
 
   const goUseCase = (uc: "digital-banking" | "consumer-payments" | "crypto") => {
     const map: Record<string, Page> = {
@@ -157,30 +139,22 @@ export default function App() {
     setSection(undefined);
   };
 
+  useLenis();
+
   useEffect(() => {
+    // Cross-page navigation without a specific anchor: snap to top of new page.
+    // Section anchors are scrolled into view by the destination page itself.
     if (!section) {
-      window.scrollTo({ top: 0 });
+      window.scrollTo({ top: 0, behavior: "instant" });
     }
   }, [page, section]);
 
-  useEffect(() => {
-    const syncSiteFromHash = () => {
-      const next = getInitialSiteVariant();
-      setSiteVariant(next);
-      setPage("home");
-      setSection(undefined);
-    };
-
-    window.addEventListener("hashchange", syncSiteFromHash);
-    return () => window.removeEventListener("hashchange", syncSiteFromHash);
-  }, []);
-
   return (
     <div
-      className="w-full min-h-screen overflow-x-hidden relative"
+      className="w-full min-h-screen overflow-x-clip relative"
       data-current-page={page}
-      data-site-variant={siteVariant ?? "selector"}
-      style={{ backgroundColor: siteVariant && page === "home" ? "transparent" : "#eaeaee" }}
+      data-site-variant="baas"
+      style={{ backgroundColor: "#eaeaee" }}
     >
       <style>{`
         [data-name="MENU"] { display: none !important; }
@@ -200,89 +174,32 @@ export default function App() {
         .site-cta-button:hover {
           filter: brightness(0.92);
         }
+        @keyframes pageEnter {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        .page-enter {
+          animation: pageEnter 320ms ease-out;
+        }
+        html { scroll-behavior: auto; }
       `}</style>
 
-      {!siteVariant ? (
-        <SiteChooser onSelect={selectSite} />
-      ) : siteVariant && page === "home" && (
-        <div className="fixed inset-0 -z-10 pointer-events-none">
-          <img src={imgHomeA} alt="" className="absolute inset-0 w-full h-full object-cover" />
-          <img src={imgHomeB} alt="" className="absolute inset-0 w-full h-full object-cover" />
-        </div>
-      )}
+      <BaasNav
+        page={page}
+        onNavigate={(newPage, newSection) => {
+          setPage(newPage);
+          setSection(newSection);
+        }}
+      />
 
-      {siteVariant && (
-        <SiteNav
-          page={page}
-          onNavigate={(newPage, newSection) => {
-            setPage(newPage);
-            setSection(newSection);
+      <div key={page} className="page-enter">
+      {page === "home" ? (
+        <BaasHome
+          onNavigate={(p, s) => {
+            setPage(p);
+            setSection(s);
           }}
         />
-      )}
-
-      {siteVariant && (
-        <button
-          type="button"
-          onClick={returnToChooser}
-          className="site-cta-button fixed bottom-[18px] right-[18px] z-[80] rounded-full border border-white/70 bg-white/65 px-[14px] py-[9px] font-['Lead_Sans_Variable:Medium',sans-serif] text-[12px] text-[#2b2c39] shadow-[0_10px_28px_rgba(43,44,57,0.14)] backdrop-blur-[24px]"
-          style={{ fontVariationSettings: "'wdth' 100" }}
-          aria-label="Back to site chooser"
-        >
-          Switch site
-        </button>
-      )}
-
-      {!siteVariant ? null : page === "home" ? (
-        siteVariant === "baas" ? (
-          <BaasHome
-            onNavigate={(p, s) => {
-              setPage(p);
-              setSection(s);
-            }}
-          />
-        ) : (
-        <div className="w-full relative">
-          {sections.map((Section, i) => (
-            <Reveal key={i}>
-              {Section === Desktop778 ? (
-                <Desktop778
-                  onNavigateAbout={() => {
-                    setPage("about");
-                    setSection(undefined);
-                  }}
-                />
-              ) : Section === EverydayBanking ? (
-                <EverydayBanking
-                  onNavigatePersonal={() => {
-                    setPage("personal");
-                    setSection(undefined);
-                  }}
-                  onNavigateBusiness={() => {
-                    setPage("business");
-                    setSection(undefined);
-                  }}
-                />
-              ) : Section === PartnerPlatform ? (
-                <PartnerPlatform
-                  onNavigate={() => {
-                    setPage("baas");
-                    setSection(undefined);
-                  }}
-                />
-              ) : (
-                <Section />
-              )}
-            </Reveal>
-          ))}
-          <SiteFooter
-            onNavigate={(p, s) => {
-              setPage(p);
-              setSection(s);
-            }}
-          />
-        </div>
-        )
       ) : page === "personal" ? (
         <PersonalBanking
           section={section}
@@ -301,8 +218,13 @@ export default function App() {
         />
       ) : page === "move" ? (
         <>
-          <MovePlatform
+          <RenamedPlatform
+            smallLabel="Money Movement"
+            overviewId="move-overview"
+            items={MOVE_ITEMS}
+            solutionsId="move-solutions"
             section={section}
+            capability="move"
             onNavigate={(p) => {
               setPage(p);
               setSection(`${p}-overview`);
@@ -319,7 +241,7 @@ export default function App() {
       ) : page === "lend" ? (
         <>
           <RenamedPlatform
-            smallLabel="Lend"
+            smallLabel="Credit & Lending"
             overviewId="lend-overview"
             items={LEND_ITEMS}
             solutionsId="lend-solutions"
@@ -341,7 +263,7 @@ export default function App() {
       ) : page === "issue" ? (
         <>
           <RenamedPlatform
-            smallLabel="Issue"
+            smallLabel="Card Programs"
             overviewId="issue-overview"
             items={ISSUE_ITEMS}
             solutionsId="issue-solutions"
@@ -363,12 +285,34 @@ export default function App() {
       ) : page === "store" ? (
         <>
           <RenamedPlatform
-            smallLabel="Store"
+            smallLabel="Programmable Accounts"
             overviewId="store-overview"
             items={STORE_ITEMS}
             solutionsId="store-solutions"
             section={section}
             capability="store"
+            onNavigate={(p) => {
+              setPage(p);
+              setSection(`${p}-overview`);
+            }}
+            onNavigateUseCase={goUseCase}
+          />
+          <SiteFooter
+            onNavigate={(p, s) => {
+              setPage(p);
+              setSection(s);
+            }}
+          />
+        </>
+      ) : page === "digital-assets" ? (
+        <>
+          <RenamedPlatform
+            smallLabel="Digital Assets"
+            overviewId="digital-assets-overview"
+            items={DIGITAL_ASSETS_ITEMS}
+            solutionsId="digital-assets-solutions"
+            section={section}
+            capability="digital-assets"
             onNavigate={(p) => {
               setPage(p);
               setSection(`${p}-overview`);
@@ -457,13 +401,12 @@ export default function App() {
           }}
         />
       )}
+      </div>
 
-      {siteVariant && !stubPage && !isCapabilityPage && page !== "about" && page !== "leadership" && page !== "jackie" && page !== "blog" && page !== "contact" && <ScrollIndicator
+      {!stubPage && !isCapabilityPage && page !== "about" && page !== "leadership" && page !== "jackie" && page !== "blog" && page !== "contact" && <ScrollIndicator
         total={
           page === "home"
-            ? siteVariant === "baas"
-              ? BAAS_HOME_SECTION_TOTAL
-              : sections.length
+            ? BAAS_HOME_SECTION_TOTAL
             : page === "baas"
             ? 11
             : page === "move"
@@ -481,7 +424,7 @@ export default function App() {
         theme={page === "home" || page === "baas" ? "dark" : "light"}
       />}
 
-      {siteVariant && <ScrollFooter
+      <ScrollFooter
         label={
           page === "home"
             ? "Lead Bank"
@@ -490,13 +433,15 @@ export default function App() {
             : page === "business"
             ? "Business Banking"
             : page === "move"
-            ? "Move"
+            ? "Money Movement"
             : page === "lend"
-            ? "Lend"
+            ? "Credit & Lending"
             : page === "issue"
-            ? "Issue"
+            ? "Card Programs"
             : page === "store"
-            ? "Store"
+            ? "Programmable Accounts"
+            : page === "digital-assets"
+            ? "Digital Assets"
             : page === "about"
             ? "Company"
             : page === "leadership"
@@ -515,19 +460,19 @@ export default function App() {
         }
         total={
           page === "home"
-            ? siteVariant === "baas"
-              ? BAAS_HOME_SECTION_TOTAL
-              : sections.length
+            ? BAAS_HOME_SECTION_TOTAL
             : page === "baas"
             ? 11
             : page === "move"
-            ? 6
+            ? MOVE_TOTAL
             : page === "lend"
             ? LEND_TOTAL
             : page === "issue"
             ? ISSUE_TOTAL
             : page === "store"
             ? STORE_TOTAL
+            : page === "digital-assets"
+            ? DIGITAL_ASSETS_TOTAL
             : page === "about"
             ? 1
             : page === "leadership"
@@ -545,7 +490,7 @@ export default function App() {
             : 5
         }
         theme={page === "home" || page === "baas" ? "dark" : "light"}
-      />}
+      />
     </div>
   );
 }

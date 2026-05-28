@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { smoothScrollTo } from "../hooks/useLenis";
 import Desktop776 from "../../imports/Desktop776-1/Desktop776";
 import Desktop777 from "../../imports/Desktop777/Desktop777";
 import Desktop780 from "../../imports/Desktop780/Desktop780";
@@ -34,7 +35,8 @@ export function PersonalBanking({
 
     const timeout = window.setTimeout(() => {
       const targetId = productTab !== undefined ? "personal-products" : section;
-      document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      const el = document.getElementById(targetId);
+      if (el) smoothScrollTo(el);
     }, 150);
 
     return () => window.clearTimeout(timeout);

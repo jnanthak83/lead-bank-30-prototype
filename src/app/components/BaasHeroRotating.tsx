@@ -58,7 +58,7 @@ export function BaasHeroRotating() {
           className="font-['Lead_Sans_Variable:Regular',sans-serif] text-[#606171] text-[32px] w-[693px]"
           style={{ fontVariationSettings: "'wdth' 100", lineHeight: 1.3 }}
         >
-          Programmable financial services designed to help fintechs scale quickly and responsibly.
+          Trusted by the most innovative companies to power complex financial products, we provide compliant, API-driven banking infrastructure designed for control, flexibility, and scale.
         </p>
       </div>
 

@@ -114,18 +114,28 @@ function Column({
 }
 
 function ProductsPanel({ dark, onNavigate }: { dark?: boolean; onNavigate: NavHandler }) {
-  const targets: Record<string, { page: Page; section: string }> = {
-    "Embedded Credit": { page: "lend", section: "embedded-credit" },
-    BNPL: { page: "lend", section: "bnpl" },
-    "Lines of credit": { page: "lend", section: "lines-of-credit" },
-    ACH: { page: "move", section: "ach" },
+  const targets: Record<string, { page: Page; section?: string }> = {
+    "Customer Balances": { page: "store", section: "customer-balances" },
+    "Account Structures": { page: "store", section: "account-structures" },
+    "FDIC Pass-Through Insurance": { page: "store", section: "fdic-pass-through-insurance" },
+    "Account Numbers": { page: "store", section: "account-numbers" },
+    "FBO Accounts": { page: "store", section: "fbo-accounts" },
+    "ACH Payments": { page: "move", section: "ach" },
     Wires: { page: "move", section: "wires" },
-    Stablecoin: { page: "move", section: "stablecoin" },
-    "Internal transfers": { page: "move", section: "internal-transfers" },
-    "Physical & Virtual Cards": { page: "issue", section: "physical-virtual-cards" },
-    "Custom Account Numbers": { page: "issue", section: "custom-account-numbers" },
-    "Multi-currency Balances": { page: "store", section: "multi-currency-balances" },
-    "FDIC-insured accounts": { page: "store", section: "fdic-insured-accounts" },
+    "Instant Payments": { page: "move", section: "instant-payments" },
+    "Internal Transfers": { page: "move", section: "internal-transfers" },
+    Checks: { page: "move", section: "checks" },
+    International: { page: "move", section: "international" },
+    "Stablecoin Transfers": { page: "move", section: "stablecoin" },
+    "Payment Controls": { page: "move", section: "payment-controls" },
+    "Credit Cards": { page: "issue", section: "credit-cards" },
+    "Debit Cards": { page: "issue", section: "debit-cards" },
+    "Prepaid Cards": { page: "issue", section: "prepaid-cards" },
+    "Term Loans": { page: "lend", section: "term-loans" },
+    "Lines of Credit": { page: "lend", section: "lines-of-credit" },
+    Stablecoins: { page: "digital-assets", section: "stablecoins" },
+    "Fiat & Stablecoin Conversion": { page: "digital-assets", section: "fiat-stablecoin-conversion" },
+    "On/Off Ramp": { page: "digital-assets", section: "on-off-ramp" },
   };
 
   const go = (item: string) => {
@@ -134,11 +144,57 @@ function ProductsPanel({ dark, onNavigate }: { dark?: boolean; onNavigate: NavHa
   };
 
   return (
-    <div className="flex gap-[64px] px-[60px] py-[48px]">
-      <Column dark={dark} title="LEND" items={["Embedded Credit", "BNPL", "Lines of credit"]} onItemClick={go} />
-      <Column dark={dark} title="MOVE" items={["ACH", "Wires", "Stablecoin", "Internal transfers"]} onItemClick={go} />
-      <Column dark={dark} title="ISSUE" items={["Physical & Virtual Cards", "Custom Account Numbers"]} onItemClick={go} />
-      <Column dark={dark} title="STORE" items={["Multi-currency Balances", "FDIC-insured accounts"]} onItemClick={go} />
+    <div className="flex gap-[48px] px-[60px] py-[48px]">
+      <Column
+        dark={dark}
+        title="PROGRAMMABLE ACCOUNTS"
+        items={[
+          "Customer Balances",
+          "Account Structures",
+          "FDIC Pass-Through Insurance",
+          "Account Numbers",
+          "FBO Accounts",
+        ]}
+        onTitleClick={() => onNavigate("store", "store-overview")}
+        onItemClick={go}
+      />
+      <Column
+        dark={dark}
+        title="MONEY MOVEMENT"
+        items={[
+          "ACH Payments",
+          "Wires",
+          "Instant Payments",
+          "Internal Transfers",
+          "Checks",
+          "International",
+          "Stablecoin Transfers",
+          "Payment Controls",
+        ]}
+        onTitleClick={() => onNavigate("move", "move-overview")}
+        onItemClick={go}
+      />
+      <Column
+        dark={dark}
+        title="CARD PROGRAMS"
+        items={["Credit Cards", "Debit Cards", "Prepaid Cards"]}
+        onTitleClick={() => onNavigate("issue", "issue-overview")}
+        onItemClick={go}
+      />
+      <Column
+        dark={dark}
+        title="CREDIT & LENDING"
+        items={["Term Loans", "Lines of Credit"]}
+        onTitleClick={() => onNavigate("lend", "lend-overview")}
+        onItemClick={go}
+      />
+      <Column
+        dark={dark}
+        title="DIGITAL ASSETS"
+        items={["Stablecoins", "Fiat & Stablecoin Conversion", "On/Off Ramp"]}
+        onTitleClick={() => onNavigate("digital-assets", "digital-assets-overview")}
+        onItemClick={go}
+      />
     </div>
   );
 }
@@ -269,19 +325,24 @@ function CompanyPanel({ dark, onNavigate }: { dark?: boolean; onNavigate: NavHan
 
 function LeadMark() {
   return (
-    <span className="flex items-center gap-[8px]">
-      <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
-        <path d="M4 7h22v9H4z" fill="#34b7ff" />
-        <path d="M14 7h16v16H14z" fill="#0040ff" />
-        <path d="M14 23 30 7v21L14 34z" fill="#4b16ff" />
-      </svg>
-      <span
-        className="font-['Lead_Sans_Variable:Medium',sans-serif] text-[24px] leading-none"
-        style={navTextStyle}
-      >
-        Lead
-      </span>
-    </span>
+    <svg
+      width="65.65"
+      height="21.12"
+      viewBox="0 0 101.001 32.4996"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-label="Lead"
+      role="img"
+    >
+      <path d="M12.2842 0.501953L0 12.7231H19.7193V0.501953H12.2842Z" fill="#0040FF" fillOpacity="0.4" />
+      <path d="M32 0.501953H19.717L19.7158 12.7231L32 0.501953Z" fill="#0040FF" fillOpacity="0.6" />
+      <path d="M32 12.7231V0.501953L19.7158 12.7231H32Z" fill="#0040FF" fillOpacity="0.8" />
+      <path d="M32 20.2785V12.7208L19.7158 12.7207V32.4996L32 20.2785Z" fill="#0040FF" />
+      <path
+        d="M77.4053 6.6875C79.3462 6.6875 81.0266 7.42028 82.2197 8.64844V6.99805H84.6279V20.166H82.1904L82.1816 18.5664C80.9885 19.7724 79.3239 20.499 77.4053 20.499C73.4821 20.499 70.5488 17.5317 70.5488 13.5869C70.5488 9.64216 73.4822 6.68755 77.4053 6.6875ZM61.7568 6.67578C65.613 6.67586 68.4706 9.78265 68.4707 13.6162H68.4668C68.4668 13.9113 68.442 14.2098 68.4102 14.5049H57.7256C58.066 16.6407 59.5998 17.9512 61.7539 17.9512C63.3255 17.9511 64.5979 17.2216 65.2979 16.0254H68.1494C67.1026 18.8054 64.6999 20.4941 61.7568 20.4941C57.9101 20.4941 54.9923 17.5201 54.9922 13.585C54.9922 9.64967 57.9005 6.67578 61.7568 6.67578ZM101.001 20.1523H98.4844V18.7656C97.3136 19.8382 95.7448 20.4794 93.96 20.4795C89.9765 20.4795 87.1125 17.5311 87.1123 13.5674C87.1123 9.60353 89.9795 6.6582 93.96 6.6582C95.6459 6.65831 97.1474 7.2228 98.2959 8.19043V3.20801H98.293L101.001 0.498047V20.1523ZM44.8008 17.5566H53.9131L51.3008 20.168H43.124C42.5005 20.168 42.0001 19.6637 42 19.0449V3.30078L44.8008 0.498047V17.5566ZM77.625 9.25195C75.1496 9.25195 73.3135 11.1083 73.3135 13.5742C73.3135 16.0401 75.1432 17.8965 77.625 17.8965C80.1068 17.8964 81.917 16.0591 81.917 13.5742C81.917 11.0893 80.1004 9.25199 77.625 9.25195ZM94.1699 9.24414C91.6945 9.24414 89.877 11.0824 89.877 13.5674C89.8771 16.0521 91.6882 17.8896 94.1699 17.8896C96.6514 17.8894 98.4803 16.033 98.4805 13.5674C98.4805 11.1016 96.6451 9.24436 94.1699 9.24414ZM61.7539 9.11914C59.7175 9.11914 58.2311 10.3478 57.792 12.3027H65.7529C65.2661 10.3003 63.7614 9.11929 61.7539 9.11914Z"
+        fill="#2B2C39"
+      />
+    </svg>
   );
 }
 

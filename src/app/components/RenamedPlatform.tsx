@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { smoothScrollTo } from "../hooks/useLenis";
 import Desktop834 from "../../imports/Desktop834/Desktop834";
 import Desktop835 from "../../imports/Desktop835/Desktop835";
 import Desktop836 from "../../imports/Desktop836/Desktop836";
@@ -73,7 +74,7 @@ function RenamedSection({
   );
 }
 
-type CapabilityKey = "lend" | "move" | "issue" | "store";
+type CapabilityKey = "lend" | "move" | "issue" | "store" | "digital-assets";
 type UseCaseKey = "digital-banking" | "consumer-payments" | "crypto";
 
 export function RenamedPlatform({
@@ -91,17 +92,17 @@ export function RenamedPlatform({
   items: SectionDef[];
   solutionsId: string;
   section?: string;
-  capability: CapabilityKey;
+  capability: CapabilityKey | "digital-assets";
   onNavigate?: (page: CapabilityKey) => void;
   onNavigateUseCase?: (useCase: UseCaseKey) => void;
 }) {
   useEffect(() => {
-    if (section) {
-      setTimeout(() => {
-        const target = document.getElementById(section);
-        if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
-      }, 150);
-    }
+    if (!section) return;
+    const id = window.setTimeout(() => {
+      const target = document.getElementById(section);
+      if (target) smoothScrollTo(target);
+    }, 150);
+    return () => window.clearTimeout(id);
   }, [section]);
 
   const allSections: {

@@ -1,6 +1,10 @@
 # Lead Bank Prototype
 
-React/Vite prototype for the Lead Bank marketing site.
+## Summary
+
+This repository contains a stakeholder-facing React prototype for a BaaS-focused Lead Bank marketing site. The prototype centers Lead Bank's partner platform narrative, includes the updated homepage, shared navigation and footer, banking/company/developer/partner platform page flows, and intentional stub pages so links do not dead-end during review.
+
+React/Vite prototype for the Lead Bank BaaS-focused marketing site.
 
 - Live site: https://lead-bank-30-prototype.netlify.app
 - GitHub: https://github.com/jnanthak83/lead-bank-30-prototype
@@ -28,17 +32,22 @@ Open the local URL Vite prints in the terminal. By default it is:
 http://localhost:5173/
 ```
 
-The first screen lets you choose between two prototype narratives:
+The app now opens directly into the BaaS-focused Lead Bank landing page.
 
-- `Lead Bank`: broader traditional banking narrative with BaaS as one offering.
-- `Lead Bank BaaS Focus`: BaaS-first narrative with its own home page and navigation.
+## Cloning For Claude Or Codex
 
-Direct local preview links:
+Use the same clone flow in either tool:
 
-```text
-http://localhost:5173/#leadbank
-http://localhost:5173/#baas
+```bash
+git clone https://github.com/jnanthak83/lead-bank-30-prototype.git
+cd lead-bank-30-prototype
+npm install
+npm run dev
 ```
+
+In Claude Code, open the cloned folder and read `CLAUDE.md` before editing. It explains the app structure, routing model, validation command, and prototype-specific expectations.
+
+In Codex, open the cloned folder as the workspace. Start by reading `README.md`, `CLAUDE.md`, and the relevant component in `src/app/components/`, then run `npm run build` before committing or deploying changes.
 
 ## Available Commands
 
@@ -72,9 +81,8 @@ Other useful files:
 - `CLAUDE.md` gives Claude Code project-specific instructions for editing this prototype.
 - `netlify.toml` controls Netlify build settings and SPA redirects.
 - `src/styles/fonts.css` registers the Lead Sans font.
-- `src/app/components/Nav.tsx` controls the top navigation and popovers.
-- `src/app/components/BaasNav.tsx` controls the BaaS-focused top navigation and popovers.
-- `src/app/components/BaasHome.tsx` controls the BaaS-focused home page.
+- `src/app/components/BaasNav.tsx` controls the top navigation and popovers.
+- `src/app/components/BaasHome.tsx` controls the home page.
 - `src/app/components/SiteFooter.tsx` controls the footer columns and links.
 
 ## How Navigation Works
@@ -85,7 +93,7 @@ To add or change a page:
 
 1. Add the page key to the `Page` type in `src/app/App.tsx`.
 2. Render the page in the conditional layout inside `App`.
-3. Add or update links in `src/app/components/Nav.tsx`.
+3. Add or update links in `src/app/components/BaasNav.tsx`.
 4. Add or update footer links in `src/app/components/SiteFooter.tsx`.
 
 Stub pages use `src/app/components/StubPage.tsx`. They are useful when navigation should work before the final content is ready.

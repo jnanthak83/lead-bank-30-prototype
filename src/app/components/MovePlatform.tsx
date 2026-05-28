@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { smoothScrollTo } from "../hooks/useLenis";
 import Desktop834 from "../../imports/Desktop834/Desktop834";
 import Desktop835 from "../../imports/Desktop835/Desktop835";
 import Desktop836 from "../../imports/Desktop836/Desktop836";
@@ -59,14 +60,12 @@ export function MovePlatform({
     },
   ];
   useEffect(() => {
-    if (section) {
-      setTimeout(() => {
-        const target = document.getElementById(section);
-        if (target) {
-          target.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-      }, 150);
-    }
+    if (!section) return;
+    const id = window.setTimeout(() => {
+      const target = document.getElementById(section);
+      if (target) smoothScrollTo(target);
+    }, 150);
+    return () => window.clearTimeout(id);
   }, [section]);
 
   return (

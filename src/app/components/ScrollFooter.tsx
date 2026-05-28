@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useFooterFade } from "../hooks/useFooterFade";
 
 export function ScrollFooter({
   label,
@@ -10,6 +11,7 @@ export function ScrollFooter({
   theme: "light" | "dark";
 }) {
   const [index, setIndex] = useState(1);
+  const fade = useFooterFade();
 
   useEffect(() => {
     const onScroll = () => {
@@ -33,7 +35,10 @@ export function ScrollFooter({
   const pad = (n: number) => n.toString().padStart(2, "0");
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 h-[72px] z-[60] pointer-events-none">
+    <div
+      className="fixed bottom-0 left-0 right-0 h-[72px] z-[60] pointer-events-none"
+      style={{ opacity: fade, transition: "opacity 0.25s ease" }}
+    >
       <div
         className="absolute left-1/2 -translate-x-1/2 h-px"
         style={{ top: 0, width: "min(1840px, calc(100% - 40px))", background: line }}

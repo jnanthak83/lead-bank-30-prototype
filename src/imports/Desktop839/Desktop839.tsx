@@ -139,25 +139,29 @@ function Group2() {
   );
 }
 
-type CapabilityKey = "lend" | "move" | "issue" | "store";
+type CapabilityKey = "lend" | "move" | "issue" | "store" | "digital-assets";
 type UseCaseKey = "digital-banking" | "consumer-payments" | "crypto";
 
 const CAPABILITY_INFO: Record<CapabilityKey, { title: string; desc: string }> = {
-  lend: {
-    title: "Lend",
-    desc: "Originate credit products with flexible terms, integrated compliance, and funds flow.",
+  store: {
+    title: "Programmable Accounts",
+    desc: "Hold balances in FDIC-insured accounts and offer multi-currency wallets.",
   },
   move: {
-    title: "Move",
-    desc: "Send and receive funds across ACH, Wires, Stablecoin, and internal transfers.",
+    title: "Money Movement",
+    desc: "Send and receive funds across ACH, wires, stablecoin, and internal transfers.",
   },
   issue: {
-    title: "Issue",
+    title: "Card Programs",
     desc: "Issue physical and virtual cards with spend controls and processor flexibility.",
   },
-  store: {
-    title: "Store",
-    desc: "Hold balances in FDIC-insured accounts and offer multi-currency wallets.",
+  lend: {
+    title: "Credit & Lending",
+    desc: "Originate credit products with flexible terms, integrated compliance, and funds flow.",
+  },
+  "digital-assets": {
+    title: "Digital Assets",
+    desc: "Bridge stablecoins into compliant cards and accounts with programmable movement.",
   },
 };
 
@@ -197,10 +201,10 @@ function Frame6({
   currentCapability?: CapabilityKey;
   onNavigate?: (page: CapabilityKey) => void;
 }) {
-  const all: CapabilityKey[] = ["lend", "move", "issue", "store"];
+  const all: CapabilityKey[] = ["store", "move", "issue", "lend", "digital-assets"];
   const items = all.filter((c) => c !== currentCapability);
   return (
-    <div className="-translate-y-1/2 absolute content-stretch flex flex-col gap-[102px] items-end left-[calc(66.67%-7px)] top-[calc(50%+0.5px)] w-[451px]">
+    <div className="-translate-y-1/2 absolute content-stretch flex flex-col gap-[56px] items-end left-[calc(66.67%-7px)] top-[calc(50%+0.5px)] w-[451px]">
       {items.map((c) => (
         <CapabilityRow key={c} capability={c} onNavigate={onNavigate} />
       ))}

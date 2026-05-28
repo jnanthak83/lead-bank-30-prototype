@@ -22,38 +22,54 @@ const NAV_COLUMNS: Group[] = [
     title: "Capabilities",
     items: [
       {
-        label: "Lend",
-        target: { page: "lend", section: "lend-overview" },
-        items: [
-          { label: "Embedded credit", target: { page: "lend", section: "embedded-credit" } },
-          { label: "BNPL", target: { page: "lend", section: "bnpl" } },
-          { label: "Lines of credit", target: { page: "lend", section: "lines-of-credit" } },
-        ],
-      },
-      {
-        label: "Move",
-        target: { page: "move", section: "move-overview" },
-        items: [
-          { label: "ACH", target: { page: "move", section: "ach" } },
-          { label: "Wires", target: { page: "move", section: "wires" } },
-          { label: "Stablecoin", target: { page: "move", section: "stablecoin" } },
-          { label: "Internal transfers", target: { page: "move", section: "internal-transfers" } },
-        ],
-      },
-      {
-        label: "Issue",
-        target: { page: "issue", section: "issue-overview" },
-        items: [
-          { label: "Physical & virtual cards", target: { page: "issue", section: "physical-virtual-cards" } },
-          { label: "Custom account numbers", target: { page: "issue", section: "custom-account-numbers" } },
-        ],
-      },
-      {
-        label: "Store",
+        label: "Programmable Accounts",
         target: { page: "store", section: "store-overview" },
         items: [
-          { label: "Multi-currency balances", target: { page: "store", section: "multi-currency-balances" } },
-          { label: "FDIC-insured accounts", target: { page: "store", section: "fdic-insured-accounts" } },
+          { label: "Customer Balances", target: { page: "store", section: "customer-balances" } },
+          { label: "Account Structures", target: { page: "store", section: "account-structures" } },
+          { label: "FDIC Pass-Through Insurance", target: { page: "store", section: "fdic-pass-through-insurance" } },
+          { label: "Account Numbers", target: { page: "store", section: "account-numbers" } },
+          { label: "FBO Accounts", target: { page: "store", section: "fbo-accounts" } },
+        ],
+      },
+      {
+        label: "Money Movement",
+        target: { page: "move", section: "move-overview" },
+        items: [
+          { label: "ACH Payments", target: { page: "move", section: "ach" } },
+          { label: "Wires", target: { page: "move", section: "wires" } },
+          { label: "Instant Payments", target: { page: "move", section: "instant-payments" } },
+          { label: "Internal Transfers", target: { page: "move", section: "internal-transfers" } },
+          { label: "Checks", target: { page: "move", section: "checks" } },
+          { label: "International", target: { page: "move", section: "international" } },
+          { label: "Stablecoin Transfers", target: { page: "move", section: "stablecoin" } },
+          { label: "Payment Controls", target: { page: "move", section: "payment-controls" } },
+        ],
+      },
+      {
+        label: "Card Programs",
+        target: { page: "issue", section: "issue-overview" },
+        items: [
+          { label: "Credit Cards", target: { page: "issue", section: "credit-cards" } },
+          { label: "Debit Cards", target: { page: "issue", section: "debit-cards" } },
+          { label: "Prepaid Cards", target: { page: "issue", section: "prepaid-cards" } },
+        ],
+      },
+      {
+        label: "Credit & Lending",
+        target: { page: "lend", section: "lend-overview" },
+        items: [
+          { label: "Term Loans", target: { page: "lend", section: "term-loans" } },
+          { label: "Lines of Credit", target: { page: "lend", section: "lines-of-credit" } },
+        ],
+      },
+      {
+        label: "Digital Assets",
+        target: { page: "digital-assets", section: "digital-assets-overview" },
+        items: [
+          { label: "Stablecoins", target: { page: "digital-assets", section: "stablecoins" } },
+          { label: "Fiat & Stablecoin Conversion", target: { page: "digital-assets", section: "fiat-stablecoin-conversion" } },
+          { label: "On/Off Ramp", target: { page: "digital-assets", section: "on-off-ramp" } },
         ],
       },
     ],
@@ -237,7 +253,7 @@ export function SiteFooter({
   return (
     <footer className="w-full" style={{ background: pageBg }}>
       <div className="w-full pb-[32px]">
-        <section className="relative min-h-[520px] w-full overflow-hidden rounded-b-[56px] bg-[#f4f4f6] px-[40px] py-[92px] text-[#2b2c39] md:px-[96px]">
+        <section className="relative min-h-[520px] w-full overflow-hidden rounded-b-[56px] bg-[#f4f4f6] px-[clamp(32px,9vw,154px)] py-[92px] text-[#2b2c39]">
           <div className="grid grid-cols-2 gap-x-[36px] gap-y-[42px] md:grid-cols-3 xl:grid-cols-[repeat(6,minmax(0,1fr))_170px]">
             {NAV_COLUMNS.map((col) => (
               <div key={col.title} className="flex flex-col gap-[20px]">
@@ -270,7 +286,7 @@ export function SiteFooter({
           </div>
         </section>
 
-        <section className="mx-auto grid max-w-[1680px] gap-[56px] px-[40px] py-[76px] lg:grid-cols-[1.5fr_0.8fr_0.8fr_0.8fr_0.7fr]">
+        <section className="grid gap-[56px] px-[clamp(32px,9vw,154px)] py-[76px] lg:grid-cols-[1.5fr_0.8fr_0.8fr_0.8fr_0.7fr]">
           <div className="flex max-w-[430px] flex-col gap-[24px]">
             <InfoHeading>Support</InfoHeading>
             <FooterText>
@@ -333,7 +349,7 @@ export function SiteFooter({
           </div>
         </section>
 
-        <section className="mx-auto flex max-w-[1680px] flex-col gap-[24px] border-t border-[#d8d8df] px-[40px] py-[28px] lg:flex-row lg:items-center lg:justify-between">
+        <section className="flex flex-col gap-[24px] border-t border-[#d8d8df] px-[clamp(32px,9vw,154px)] py-[28px] lg:flex-row lg:items-center lg:justify-between">
           <div
             className="flex flex-wrap gap-x-[34px] gap-y-[12px] font-['Lead_Sans_Variable:Regular',sans-serif] text-[12px] text-[#606171]"
             style={{ fontVariationSettings: "'wdth' 100" }}

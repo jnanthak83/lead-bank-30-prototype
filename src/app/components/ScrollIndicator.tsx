@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import { useFooterFade } from "../hooks/useFooterFade";
 
 export function ScrollIndicator({ total, theme }: { total: number; theme: "light" | "dark" }) {
   const [index, setIndex] = useState(1);
+  const fade = useFooterFade();
 
   useEffect(() => {
     const onScroll = () => {
@@ -24,7 +26,7 @@ export function ScrollIndicator({ total, theme }: { total: number; theme: "light
   return (
     <div
       className="fixed flex flex-col gap-[7px] items-start z-[60] pointer-events-none"
-      style={{ left: 40, bottom: 120, width: 22 }}
+      style={{ left: 40, bottom: 120, width: 22, opacity: fade, transition: "opacity 0.25s ease" }}
     >
       {Array.from({ length: total }).map((_, i) => {
         const active = i === index - 1;

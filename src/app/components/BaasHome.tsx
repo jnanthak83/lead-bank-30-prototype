@@ -5,6 +5,7 @@ import imgBaasFlex from "../../imports/Desktop825/4af10adbc12ea0f40af38b00ab7bc8
 import homeParallaxBg from "../../imports/HomeParallax/home-parallax-bg.png";
 import type { Page } from "../App";
 import { BaasHeroRotating } from "./BaasHeroRotating";
+import { TrustBar } from "./TrustBar";
 import { Reveal } from "./Reveal";
 import { SiteFooter } from "./SiteFooter";
 
@@ -1198,6 +1199,7 @@ export function BaasHome({ onNavigate }: { onNavigate: Navigate }) {
             <BaasHeroRotating />
           </Reveal>
           <HighlightParagraphSection />
+          <TrustBar />
         </div>
       </div>
 

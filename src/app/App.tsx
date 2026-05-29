@@ -181,6 +181,17 @@ export default function App() {
         .page-enter {
           animation: pageEnter 320ms ease-out;
         }
+        .lead-logo {
+          display: inline-flex;
+          align-items: center;
+          opacity: 0.6;
+          --customerLogoColor: #2b2c39;
+          --customerLogoColorAlt: #ffffff;
+          --customerLogoColorAltNoTransparency: #ffffff;
+          --customerLogoColorAltShadeLighter: #2b2c39;
+          --customerLogoColorAltShadeDarker: #2b2c39;
+        }
+        .lead-logo svg { display: block; height: 42px; width: auto; }
         html { scroll-behavior: auto; }
       `}</style>
 
